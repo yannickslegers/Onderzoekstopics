@@ -7,6 +7,7 @@ using System.Web.Mvc;
 using SC.BL;
 using SC.BL.Domain;
 using SC.UI.Web.MVC.Models;
+
 namespace SC.UI.Web.MVC.Controllers
 {
     public class TicketController : Controller
@@ -17,7 +18,9 @@ namespace SC.UI.Web.MVC.Controllers
         public ActionResult Index()
         {
             IEnumerable<Ticket> tickets = mgr.GetTickets();
+            
             return View(tickets);
+
         }
 
         // GET: Ticket/Details/5
