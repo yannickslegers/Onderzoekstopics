@@ -1,0 +1,14 @@
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-ADO\Domain\bin\Debug\SC.BL.Domain.dll
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-ADO\Domain\bin\Debug\SC.BL.Domain.pdb
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-ADO\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-ADO\Domain\obj\Debug\SC.BL.Domain.dll
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-ADO\Domain\obj\Debug\SC.BL.Domain.pdb
+D:\KdG\DotNET\TFS_15-16\deel1\Examples\Eg_SupportCenter-ADO\Domain\bin\Debug\SC.BL.Domain.dll
+D:\KdG\DotNET\TFS_15-16\deel1\Examples\Eg_SupportCenter-ADO\Domain\bin\Debug\SC.BL.Domain.pdb
+D:\KdG\DotNET\TFS_15-16\deel1\Examples\Eg_SupportCenter-ADO\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache
+D:\KdG\DotNET\TFS_15-16\deel1\Examples\Eg_SupportCenter-ADO\Domain\obj\Debug\SC.BL.Domain.dll
+D:\KdG\DotNET\TFS_15-16\deel1\Examples\Eg_SupportCenter-ADO\Domain\obj\Debug\SC.BL.Domain.pdb
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-EF\Domain\bin\Debug\SC.BL.Domain.dll
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-EF\Domain\bin\Debug\SC.BL.Domain.pdb
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-EF\Domain\obj\Debug\SC.BL.Domain.dll
+C:\Users\Kenneth\OneDrive\KdG_1516\dotNET-deel1\_DRAFT\Eg_SupportCenter-EF\Domain\obj\Debug\SC.BL.Domain.pdb
