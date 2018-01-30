@@ -68,7 +68,6 @@ C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\Newtonsoft.Json.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\SC.BL.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\SC.BL.Domain.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\System.Net.Http.Formatting.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\System.Web.Helpers.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-MVC\bin\System.Web.Http.dll

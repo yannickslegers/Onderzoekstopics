@@ -17,4 +17,3 @@ C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\Domain\bin\
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\Domain\obj\Debug\Domain.csproj.CoreCompileInputs.cache
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\Domain\obj\Debug\SC.BL.Domain.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\Domain\obj\Debug\SC.BL.Domain.pdb
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

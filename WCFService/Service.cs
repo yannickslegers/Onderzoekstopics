@@ -51,7 +51,7 @@ namespace WCFService
             return mgr.GetTicketResponses(ticketNumber);
         }
 
-        public TicketResponse AddTicketResponse(int ticketNumber, string response, bool isClientResponse)
+        public TicketResponse AddResponses(int ticketNumber, string response, bool isClientResponse)
         {
             return mgr.AddTicketResponse(ticketNumber, response, isClientResponse);
         }

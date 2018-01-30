@@ -32,7 +32,7 @@ namespace WCFService
         [OperationContract]
         IEnumerable<TicketResponse> GetTicketResponses(int ticketNumber);
         [OperationContract]
-        TicketResponse AddTicketResponse(int ticketNumber, string response, bool isClientResponse);
+        TicketResponse AddResponses(int ticketNumber, string response, bool isClientResponse);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.
