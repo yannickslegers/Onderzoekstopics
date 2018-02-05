@@ -37,3 +37,15 @@ C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DAL\obj\Deb
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DAL\obj\Debug\SC.DAL.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DAL\obj\Debug\SC.DAL.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\SC.DAL.dll.config
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\SC.DAL.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\SC.DAL.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\EntityFramework.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\SC.BL.Domain.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\SC.BL.Domain.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\EntityFramework.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\obj\Debug\SC.DAL.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DAL\obj\Debug\SC.DAL.pdb

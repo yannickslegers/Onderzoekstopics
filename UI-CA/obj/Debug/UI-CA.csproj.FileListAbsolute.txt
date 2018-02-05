@@ -57,3 +57,22 @@ C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\obj\D
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\obj\Debug\UI-CA.csproj.CoreCompileInputs.cache
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\obj\Debug\SC.UI.CA.exe
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\obj\Debug\SC.UI.CA.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.UI.CA.exe.config
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.UI.CA.exe
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.UI.CA.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Newtonsoft.Json.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.Domain.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.DAL.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\EntityFramework.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.Domain.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Newtonsoft.Json.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.DAL.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.DAL.dll.config
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\EntityFramework.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\obj\Debug\UI-CA.csprojResolveAssemblyReference.cache
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\obj\Debug\SC.UI.CA.exe
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\obj\Debug\SC.UI.CA.pdb
