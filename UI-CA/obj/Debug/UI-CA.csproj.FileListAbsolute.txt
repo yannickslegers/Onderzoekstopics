@@ -43,7 +43,6 @@ C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\D
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\SC.UI.CA.pdb
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.Domain.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\SC.DAL.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\EntityFramework.dll
 C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\UI-CA\bin\Debug\EntityFramework.SqlServer.dll

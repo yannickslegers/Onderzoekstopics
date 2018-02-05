@@ -7,14 +7,16 @@ using System.Threading.Tasks;
 using SC.BL;
 using SC.BL.Domain;
 using SC.UI.CA.ExtensionMethods;
+using SC.UI.CA.ServiceReference1;
 
 namespace SC.UI.CA
 {
   class Program
   {
     private static bool quit = false;
-    private static readonly ITicketManager mgr = new TicketManager();
+      private static readonly ITicketManager mgr = null;
     private static readonly Service srv = new Service();
+    private static readonly ServiceReference1.ServiceClient _client = new ServiceClient();
 
     static void Main(string[] args)
     {
@@ -42,6 +44,7 @@ namespace SC.UI.CA
       {
         Console.WriteLine();
         Console.WriteLine("Er heeft zich een onverwachte fout voorgedaan!");
+        Console.WriteLine(e.Message);
         Console.WriteLine();
       }
     }
@@ -94,8 +97,10 @@ namespace SC.UI.CA
 
     private static void PrintAllTickets()
     {
-      foreach (var t in mgr.GetTickets())
+      _client.Open();
+      foreach (var t in _client.GetTickets())
         Console.WriteLine(t.GetInfo());
+      _client.Close();
     }
 
     private static void ActionShowTicketDetails()

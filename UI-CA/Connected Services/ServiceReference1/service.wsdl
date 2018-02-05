@@ -1,0 +1,191 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:tns="http://tempuri.org/" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Service" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import namespace="http://tempuri.org/" />
+      <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/SC.BL.Domain" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IService_GetTickets_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTickets" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTickets_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketsResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddHardwareTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddHardwareTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddHardwareTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddHardwareTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangeTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangeTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangeTicketStateToClosed_InputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTicketStateToClosed" />
+  </wsdl:message>
+  <wsdl:message name="IService_ChangeTicketStateToClosed_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ChangeTicketStateToClosedResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveTicket_InputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTicket" />
+  </wsdl:message>
+  <wsdl:message name="IService_RemoveTicket_OutputMessage">
+    <wsdl:part name="parameters" element="tns:RemoveTicketResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTicketResponses_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketResponses" />
+  </wsdl:message>
+  <wsdl:message name="IService_GetTicketResponses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetTicketResponsesResponse" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddResponses_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponses" />
+  </wsdl:message>
+  <wsdl:message name="IService_AddResponses_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponsesResponse" />
+  </wsdl:message>
+  <wsdl:portType name="IService">
+    <wsdl:operation name="GetTickets">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTickets" message="tns:IService_GetTickets_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTicketsResponse" message="tns:IService_GetTickets_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTicket" message="tns:IService_GetTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTicketResponse" message="tns:IService_GetTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddTicket" message="tns:IService_AddTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddTicketResponse" message="tns:IService_AddTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddHardwareTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddHardwareTicket" message="tns:IService_AddHardwareTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddHardwareTicketResponse" message="tns:IService_AddHardwareTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ChangeTicket" message="tns:IService_ChangeTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ChangeTicketResponse" message="tns:IService_ChangeTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTicketStateToClosed">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/ChangeTicketStateToClosed" message="tns:IService_ChangeTicketStateToClosed_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/ChangeTicketStateToClosedResponse" message="tns:IService_ChangeTicketStateToClosed_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTicket">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/RemoveTicket" message="tns:IService_RemoveTicket_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/RemoveTicketResponse" message="tns:IService_RemoveTicket_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketResponses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTicketResponses" message="tns:IService_GetTicketResponses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTicketResponsesResponse" message="tns:IService_GetTicketResponses_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="AddResponses">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddResponses" message="tns:IService_AddResponses_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddResponsesResponse" message="tns:IService_AddResponses_OutputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="GetTickets">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTickets" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicket">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddTicket">
+      <soap:operation soapAction="http://tempuri.org/IService/AddTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddHardwareTicket">
+      <soap:operation soapAction="http://tempuri.org/IService/AddHardwareTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTicket">
+      <soap:operation soapAction="http://tempuri.org/IService/ChangeTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeTicketStateToClosed">
+      <soap:operation soapAction="http://tempuri.org/IService/ChangeTicketStateToClosed" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RemoveTicket">
+      <soap:operation soapAction="http://tempuri.org/IService/RemoveTicket" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetTicketResponses">
+      <soap:operation soapAction="http://tempuri.org/IService/GetTicketResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddResponses">
+      <soap:operation soapAction="http://tempuri.org/IService/AddResponses" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="BasicHttpBinding_IService" binding="tns:BasicHttpBinding_IService">
+      <soap:address location="http://localhost:8733/Design_Time_Address/WCFService/Service/" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

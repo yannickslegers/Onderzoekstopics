@@ -1,5 +1,6 @@
 ﻿
 using System.Collections.Generic;
+using System.Linq;
 using SC.BL;
 using SC.BL.Domain;
 
@@ -9,9 +10,8 @@ namespace WCFService
     public class Service : IService
     {
         private ITicketManager mgr = new TicketManager();
-       
 
-        public IEnumerable<Ticket> GetTickets()
+        public List<Ticket> GetTickets()
         {
             return mgr.GetTickets();
         }

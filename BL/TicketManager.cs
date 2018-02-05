@@ -13,14 +13,19 @@ namespace SC.BL
   public class TicketManager : ITicketManager
   {
     private readonly ITicketRepository repo;
+      public bool test()
+      {
+          return true;
+      }
 
-    public TicketManager()
+      public TicketManager()
     {
       //repo = new TicketRepositoryHC();
       repo = new SC.DAL.EF.TicketRepository();
+      Console.WriteLine("started TicketManager");
     }
 
-    public IEnumerable<Ticket> GetTickets()
+    public List<Ticket> GetTickets()
     {
       return repo.ReadTickets();
     }

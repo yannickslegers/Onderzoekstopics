@@ -1,13 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Principal;
 using System.Web;
 using System.Web.Mvc;
 
 using SC.BL;
 using SC.BL.Domain;
 using SC.UI.Web.MVC.Models;
-using SC.UI.Web.MVC.ServiceReference;
+
+
 
 namespace SC.UI.Web.MVC.Controllers
 {
@@ -17,9 +19,11 @@ namespace SC.UI.Web.MVC.Controllers
 
         // GET: Ticket
         public ActionResult Index()
-        {   
-            ServiceReference.ServiceClient _client = new ServiceClient();
-            IEnumerable<Ticket> tickets = _client.GetTickets();
+        {
+            
+            
+            IEnumerable<Ticket> tickets = mgr.GetTickets();
+            
             
             return View(tickets);
 

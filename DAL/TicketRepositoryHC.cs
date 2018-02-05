@@ -122,7 +122,7 @@ namespace SC.DAL
       return ticket;
     }
 
-    public IEnumerable<Ticket> ReadTickets()
+    public List<Ticket> ReadTickets()
     {
       return tickets;
     }

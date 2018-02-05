@@ -19,7 +19,7 @@ namespace SC.DAL.EF
       ctx.Database.Initialize(false);
     }
 
-    public IEnumerable<Ticket> ReadTickets()
+    public List<Ticket> ReadTickets()
     {
       //IEnumerable<Ticket> tickets = ctx.Tickets.AsEnumerable<Ticket>();
 
@@ -30,7 +30,7 @@ namespace SC.DAL.EF
       //IEnumerable<Ticket> tickets = ctx.Tickets.AsEnumerable<Ticket>(); // needs 'Multiple Active Result Sets' (MARS) for lazy-loading (connectionstring)
       IEnumerable<Ticket> tickets = ctx.Tickets.ToList<Ticket>(); // all (parent-)entities are loaded before lazy-loading associated data (doesn't need MARS)
 
-      return tickets;
+      return tickets.ToList();
     }
 
     public Ticket ReadTicket(int ticketNumber)

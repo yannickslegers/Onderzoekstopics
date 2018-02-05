@@ -10,13 +10,14 @@ namespace SC.BL
 {
   public interface ITicketManager
   {
-    IEnumerable<Ticket> GetTickets();
+    List<Ticket> GetTickets();
     Ticket GetTicket(int ticketNumber);
     Ticket AddTicket(int accountId, string question);
     Ticket AddTicket(int accountId, string device, string problem);
     void ChangeTicket(Ticket ticket);
     void ChangeTicketStateToClosed(int ticketNumber);
     void RemoveTicket(int ticketNumber);
+      bool test();
 
     IEnumerable<TicketResponse> GetTicketResponses(int ticketNumber);
     TicketResponse AddTicketResponse(int ticketNumber, string response, bool isClientResponse);

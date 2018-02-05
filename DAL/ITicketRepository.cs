@@ -11,7 +11,7 @@ namespace SC.DAL
   public interface ITicketRepository
   {
     #region Ticket
-    IEnumerable<Ticket> ReadTickets();
+    List<Ticket> ReadTickets();
     // CRUD Ticket
     Ticket CreateTicket(Ticket ticket);
     Ticket ReadTicket(int ticketNumber);

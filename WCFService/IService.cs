@@ -4,18 +4,21 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using SC.BL;
 using SC.BL.Domain;
 
 namespace WCFService
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService" in both code and config file together.
     [ServiceContract]
+    [ServiceKnownType(typeof(List<Ticket>))]
+    [ServiceKnownType(typeof(List<TicketResponse>))]
     public interface IService
     {
  
         // TODO: Add your service operations here
         [OperationContract]
-        IEnumerable<Ticket> GetTickets();
+        List<Ticket> GetTickets();
         [OperationContract]
         Ticket GetTicket(int ticketNumber);
         [OperationContract]
