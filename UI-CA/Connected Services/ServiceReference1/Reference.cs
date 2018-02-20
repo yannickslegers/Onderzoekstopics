@@ -9,41 +9,457 @@
 //------------------------------------------------------------------------------
 
 namespace SC.UI.CA.ServiceReference1 {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TicketDTO", Namespace="http://schemas.datacontract.org/2004/07/DTO")]
+    [System.SerializableAttribute()]
+    [System.Runtime.Serialization.KnownTypeAttribute(typeof(SC.UI.CA.ServiceReference1.HardwareTicketDTO))]
+    public partial class TicketDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AccountIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateOpenendField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponseDTO> ResponsesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SC.UI.CA.ServiceReference1.TicketState StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TicketNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateOpenend {
+            get {
+                return this.DateOpenendField;
+            }
+            set {
+                if ((this.DateOpenendField.Equals(value) != true)) {
+                    this.DateOpenendField = value;
+                    this.RaisePropertyChanged("DateOpenend");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponseDTO> Responses {
+            get {
+                return this.ResponsesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResponsesField, value) != true)) {
+                    this.ResponsesField = value;
+                    this.RaisePropertyChanged("Responses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SC.UI.CA.ServiceReference1.TicketState State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((this.StateField.Equals(value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TicketNumber {
+            get {
+                return this.TicketNumberField;
+            }
+            set {
+                if ((this.TicketNumberField.Equals(value) != true)) {
+                    this.TicketNumberField = value;
+                    this.RaisePropertyChanged("TicketNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="HardwareTicketDTO", Namespace="http://schemas.datacontract.org/2004/07/DTO")]
+    [System.SerializableAttribute()]
+    public partial class HardwareTicketDTO : SC.UI.CA.ServiceReference1.TicketDTO {
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string DeviceNameField;
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string DeviceName {
+            get {
+                return this.DeviceNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.DeviceNameField, value) != true)) {
+                    this.DeviceNameField = value;
+                    this.RaisePropertyChanged("DeviceName");
+                }
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TicketResponseDTO", Namespace="http://schemas.datacontract.org/2004/07/DTO")]
+    [System.SerializableAttribute()]
+    public partial class TicketResponseDTO : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsClientResponseField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime Date {
+            get {
+                return this.DateField;
+            }
+            set {
+                if ((this.DateField.Equals(value) != true)) {
+                    this.DateField = value;
+                    this.RaisePropertyChanged("Date");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsClientResponse {
+            get {
+                return this.IsClientResponseField;
+            }
+            set {
+                if ((this.IsClientResponseField.Equals(value) != true)) {
+                    this.IsClientResponseField = value;
+                    this.RaisePropertyChanged("IsClientResponse");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.FlagsAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TicketState", Namespace="http://schemas.datacontract.org/2004/07/SC.BL.Domain")]
+    public enum TicketState : byte {
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Open = 1,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Answered = 2,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        ClientAnswer = 3,
+        
+        [System.Runtime.Serialization.EnumMemberAttribute()]
+        Closed = 4,
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Ticket", Namespace="http://schemas.datacontract.org/2004/07/SC.BL.Domain")]
+    [System.SerializableAttribute()]
+    public partial class Ticket : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int AccountIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.DateTime DateOpenedField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponse> ResponsesField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SC.UI.CA.ServiceReference1.TicketState StateField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string TextField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int TicketNumberField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int AccountId {
+            get {
+                return this.AccountIdField;
+            }
+            set {
+                if ((this.AccountIdField.Equals(value) != true)) {
+                    this.AccountIdField = value;
+                    this.RaisePropertyChanged("AccountId");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.DateTime DateOpened {
+            get {
+                return this.DateOpenedField;
+            }
+            set {
+                if ((this.DateOpenedField.Equals(value) != true)) {
+                    this.DateOpenedField = value;
+                    this.RaisePropertyChanged("DateOpened");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponse> Responses {
+            get {
+                return this.ResponsesField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ResponsesField, value) != true)) {
+                    this.ResponsesField = value;
+                    this.RaisePropertyChanged("Responses");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SC.UI.CA.ServiceReference1.TicketState State {
+            get {
+                return this.StateField;
+            }
+            set {
+                if ((this.StateField.Equals(value) != true)) {
+                    this.StateField = value;
+                    this.RaisePropertyChanged("State");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Text {
+            get {
+                return this.TextField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.TextField, value) != true)) {
+                    this.TextField = value;
+                    this.RaisePropertyChanged("Text");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int TicketNumber {
+            get {
+                return this.TicketNumberField;
+            }
+            set {
+                if ((this.TicketNumberField.Equals(value) != true)) {
+                    this.TicketNumberField = value;
+                    this.RaisePropertyChanged("TicketNumber");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="TicketResponse", Namespace="http://schemas.datacontract.org/2004/07/SC.BL.Domain")]
+    [System.SerializableAttribute()]
+    public partial class TicketResponse : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference1.IService")]
     public interface IService {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTickets", ReplyAction="http://tempuri.org/IService/GetTicketsResponse")]
-        System.Collections.Generic.List<SC.BL.Domain.Ticket> GetTickets();
+        System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketDTO> GetTickets();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTickets", ReplyAction="http://tempuri.org/IService/GetTicketsResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SC.BL.Domain.Ticket>> GetTicketsAsync();
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketDTO>> GetTicketsAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTicket", ReplyAction="http://tempuri.org/IService/GetTicketResponse")]
-        SC.BL.Domain.Ticket GetTicket(int ticketNumber);
+        SC.UI.CA.ServiceReference1.TicketDTO GetTicket(int ticketNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTicket", ReplyAction="http://tempuri.org/IService/GetTicketResponse")]
-        System.Threading.Tasks.Task<SC.BL.Domain.Ticket> GetTicketAsync(int ticketNumber);
+        System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketDTO> GetTicketAsync(int ticketNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddTicket", ReplyAction="http://tempuri.org/IService/AddTicketResponse")]
-        SC.BL.Domain.Ticket AddTicket(int accountId, string question);
+        SC.UI.CA.ServiceReference1.TicketDTO AddTicket(int accountId, string question);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddTicket", ReplyAction="http://tempuri.org/IService/AddTicketResponse")]
-        System.Threading.Tasks.Task<SC.BL.Domain.Ticket> AddTicketAsync(int accountId, string question);
+        System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketDTO> AddTicketAsync(int accountId, string question);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddHardwareTicket", ReplyAction="http://tempuri.org/IService/AddHardwareTicketResponse")]
-        SC.BL.Domain.Ticket AddHardwareTicket(int accountId, string device, string problem);
+        SC.UI.CA.ServiceReference1.TicketDTO AddHardwareTicket(int accountId, string device, string problem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddHardwareTicket", ReplyAction="http://tempuri.org/IService/AddHardwareTicketResponse")]
-        System.Threading.Tasks.Task<SC.BL.Domain.Ticket> AddHardwareTicketAsync(int accountId, string device, string problem);
+        System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketDTO> AddHardwareTicketAsync(int accountId, string device, string problem);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ChangeTicket", ReplyAction="http://tempuri.org/IService/ChangeTicketResponse")]
-        void ChangeTicket(SC.BL.Domain.Ticket ticket);
+        void ChangeTicket(SC.UI.CA.ServiceReference1.Ticket ticket);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ChangeTicket", ReplyAction="http://tempuri.org/IService/ChangeTicketResponse")]
-        System.Threading.Tasks.Task ChangeTicketAsync(SC.BL.Domain.Ticket ticket);
+        System.Threading.Tasks.Task ChangeTicketAsync(SC.UI.CA.ServiceReference1.Ticket ticket);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/ChangeTicketStateToClosed", ReplyAction="http://tempuri.org/IService/ChangeTicketStateToClosedResponse")]
         void ChangeTicketStateToClosed(int ticketNumber);
@@ -58,16 +474,16 @@ namespace SC.UI.CA.ServiceReference1 {
         System.Threading.Tasks.Task RemoveTicketAsync(int ticketNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTicketResponses", ReplyAction="http://tempuri.org/IService/GetTicketResponsesResponse")]
-        System.Collections.Generic.List<SC.BL.Domain.TicketResponse> GetTicketResponses(int ticketNumber);
+        System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponseDTO> GetTicketResponses(int ticketNumber);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/GetTicketResponses", ReplyAction="http://tempuri.org/IService/GetTicketResponsesResponse")]
-        System.Threading.Tasks.Task<System.Collections.Generic.List<SC.BL.Domain.TicketResponse>> GetTicketResponsesAsync(int ticketNumber);
+        System.Threading.Tasks.Task<System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponseDTO>> GetTicketResponsesAsync(int ticketNumber);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddResponses", ReplyAction="http://tempuri.org/IService/AddResponsesResponse")]
-        SC.BL.Domain.TicketResponse AddResponses(int ticketNumber, string response, bool isClientResponse);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddResponse", ReplyAction="http://tempuri.org/IService/AddResponseResponse")]
+        SC.UI.CA.ServiceReference1.TicketResponseDTO AddResponse(int ticketNumber, string response, bool isClientResponse);
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddResponses", ReplyAction="http://tempuri.org/IService/AddResponsesResponse")]
-        System.Threading.Tasks.Task<SC.BL.Domain.TicketResponse> AddResponsesAsync(int ticketNumber, string response, bool isClientResponse);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IService/AddResponse", ReplyAction="http://tempuri.org/IService/AddResponseResponse")]
+        System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketResponseDTO> AddResponseAsync(int ticketNumber, string response, bool isClientResponse);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,43 +513,43 @@ namespace SC.UI.CA.ServiceReference1 {
                 base(binding, remoteAddress) {
         }
         
-        public System.Collections.Generic.List<SC.BL.Domain.Ticket> GetTickets() {
+        public System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketDTO> GetTickets() {
             return base.Channel.GetTickets();
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SC.BL.Domain.Ticket>> GetTicketsAsync() {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketDTO>> GetTicketsAsync() {
             return base.Channel.GetTicketsAsync();
         }
         
-        public SC.BL.Domain.Ticket GetTicket(int ticketNumber) {
+        public SC.UI.CA.ServiceReference1.TicketDTO GetTicket(int ticketNumber) {
             return base.Channel.GetTicket(ticketNumber);
         }
         
-        public System.Threading.Tasks.Task<SC.BL.Domain.Ticket> GetTicketAsync(int ticketNumber) {
+        public System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketDTO> GetTicketAsync(int ticketNumber) {
             return base.Channel.GetTicketAsync(ticketNumber);
         }
         
-        public SC.BL.Domain.Ticket AddTicket(int accountId, string question) {
+        public SC.UI.CA.ServiceReference1.TicketDTO AddTicket(int accountId, string question) {
             return base.Channel.AddTicket(accountId, question);
         }
         
-        public System.Threading.Tasks.Task<SC.BL.Domain.Ticket> AddTicketAsync(int accountId, string question) {
+        public System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketDTO> AddTicketAsync(int accountId, string question) {
             return base.Channel.AddTicketAsync(accountId, question);
         }
         
-        public SC.BL.Domain.Ticket AddHardwareTicket(int accountId, string device, string problem) {
+        public SC.UI.CA.ServiceReference1.TicketDTO AddHardwareTicket(int accountId, string device, string problem) {
             return base.Channel.AddHardwareTicket(accountId, device, problem);
         }
         
-        public System.Threading.Tasks.Task<SC.BL.Domain.Ticket> AddHardwareTicketAsync(int accountId, string device, string problem) {
+        public System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketDTO> AddHardwareTicketAsync(int accountId, string device, string problem) {
             return base.Channel.AddHardwareTicketAsync(accountId, device, problem);
         }
         
-        public void ChangeTicket(SC.BL.Domain.Ticket ticket) {
+        public void ChangeTicket(SC.UI.CA.ServiceReference1.Ticket ticket) {
             base.Channel.ChangeTicket(ticket);
         }
         
-        public System.Threading.Tasks.Task ChangeTicketAsync(SC.BL.Domain.Ticket ticket) {
+        public System.Threading.Tasks.Task ChangeTicketAsync(SC.UI.CA.ServiceReference1.Ticket ticket) {
             return base.Channel.ChangeTicketAsync(ticket);
         }
         
@@ -153,20 +569,20 @@ namespace SC.UI.CA.ServiceReference1 {
             return base.Channel.RemoveTicketAsync(ticketNumber);
         }
         
-        public System.Collections.Generic.List<SC.BL.Domain.TicketResponse> GetTicketResponses(int ticketNumber) {
+        public System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponseDTO> GetTicketResponses(int ticketNumber) {
             return base.Channel.GetTicketResponses(ticketNumber);
         }
         
-        public System.Threading.Tasks.Task<System.Collections.Generic.List<SC.BL.Domain.TicketResponse>> GetTicketResponsesAsync(int ticketNumber) {
+        public System.Threading.Tasks.Task<System.Collections.Generic.List<SC.UI.CA.ServiceReference1.TicketResponseDTO>> GetTicketResponsesAsync(int ticketNumber) {
             return base.Channel.GetTicketResponsesAsync(ticketNumber);
         }
         
-        public SC.BL.Domain.TicketResponse AddResponses(int ticketNumber, string response, bool isClientResponse) {
-            return base.Channel.AddResponses(ticketNumber, response, isClientResponse);
+        public SC.UI.CA.ServiceReference1.TicketResponseDTO AddResponse(int ticketNumber, string response, bool isClientResponse) {
+            return base.Channel.AddResponse(ticketNumber, response, isClientResponse);
         }
         
-        public System.Threading.Tasks.Task<SC.BL.Domain.TicketResponse> AddResponsesAsync(int ticketNumber, string response, bool isClientResponse) {
-            return base.Channel.AddResponsesAsync(ticketNumber, response, isClientResponse);
+        public System.Threading.Tasks.Task<SC.UI.CA.ServiceReference1.TicketResponseDTO> AddResponseAsync(int ticketNumber, string response, bool isClientResponse) {
+            return base.Channel.AddResponseAsync(ticketNumber, response, isClientResponse);
         }
     }
 }

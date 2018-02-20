@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DTO" />
   <xs:import namespace="http://schemas.datacontract.org/2004/07/SC.BL.Domain" />
   <xs:element name="GetTickets">
     <xs:complexType>
@@ -9,7 +10,7 @@
   <xs:element name="GetTicketsResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="GetTicketsResult" nillable="true" type="q1:ArrayOfTicket" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="GetTicketsResult" nillable="true" type="q1:ArrayOfTicketDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -23,7 +24,7 @@
   <xs:element name="GetTicketResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="GetTicketResult" nillable="true" type="q2:Ticket" />
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="GetTicketResult" nillable="true" type="q2:TicketDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -38,7 +39,7 @@
   <xs:element name="AddTicketResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="AddTicketResult" nillable="true" type="q3:Ticket" />
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="AddTicketResult" nillable="true" type="q3:TicketDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -54,7 +55,7 @@
   <xs:element name="AddHardwareTicketResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="AddHardwareTicketResult" nillable="true" type="q4:Ticket" />
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="AddHardwareTicketResult" nillable="true" type="q4:TicketDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -104,11 +105,11 @@
   <xs:element name="GetTicketResponsesResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="GetTicketResponsesResult" nillable="true" type="q6:ArrayOfTicketResponse" />
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="GetTicketResponsesResult" nillable="true" type="q6:ArrayOfTicketResponseDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddResponses">
+  <xs:element name="AddResponse">
     <xs:complexType>
       <xs:sequence>
         <xs:element minOccurs="0" name="ticketNumber" type="xs:int" />
@@ -117,10 +118,10 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
-  <xs:element name="AddResponsesResponse">
+  <xs:element name="AddResponseResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="AddResponsesResult" nillable="true" type="q7:TicketResponse" />
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="AddResponseResult" nillable="true" type="q7:TicketResponseDTO" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

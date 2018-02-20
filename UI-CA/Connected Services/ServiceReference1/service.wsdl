@@ -5,6 +5,7 @@
       <xsd:import namespace="http://tempuri.org/" />
       <xsd:import namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
       <xsd:import namespace="http://schemas.datacontract.org/2004/07/SC.BL.Domain" />
+      <xsd:import namespace="http://schemas.datacontract.org/2004/07/DTO" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IService_GetTickets_InputMessage">
@@ -55,11 +56,11 @@
   <wsdl:message name="IService_GetTicketResponses_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetTicketResponsesResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_AddResponses_InputMessage">
-    <wsdl:part name="parameters" element="tns:AddResponses" />
+  <wsdl:message name="IService_AddResponse_InputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponse" />
   </wsdl:message>
-  <wsdl:message name="IService_AddResponses_OutputMessage">
-    <wsdl:part name="parameters" element="tns:AddResponsesResponse" />
+  <wsdl:message name="IService_AddResponse_OutputMessage">
+    <wsdl:part name="parameters" element="tns:AddResponseResponse" />
   </wsdl:message>
   <wsdl:portType name="IService">
     <wsdl:operation name="GetTickets">
@@ -94,9 +95,9 @@
       <wsdl:input wsaw:Action="http://tempuri.org/IService/GetTicketResponses" message="tns:IService_GetTicketResponses_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IService/GetTicketResponsesResponse" message="tns:IService_GetTicketResponses_OutputMessage" />
     </wsdl:operation>
-    <wsdl:operation name="AddResponses">
-      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddResponses" message="tns:IService_AddResponses_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddResponsesResponse" message="tns:IService_AddResponses_OutputMessage" />
+    <wsdl:operation name="AddResponse">
+      <wsdl:input wsaw:Action="http://tempuri.org/IService/AddResponse" message="tns:IService_AddResponse_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IService/AddResponseResponse" message="tns:IService_AddResponse_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IService" type="tns:IService">
@@ -173,8 +174,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="AddResponses">
-      <soap:operation soapAction="http://tempuri.org/IService/AddResponses" style="document" />
+    <wsdl:operation name="AddResponse">
+      <soap:operation soapAction="http://tempuri.org/IService/AddResponse" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

@@ -39,7 +39,6 @@
       <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="SC.BL.Domain, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -60,16 +59,23 @@
     </Compile>
     <Compile Include="ExtensionMethods\ExtensionMethods.cs" />
     <Compile Include="Program.cs" />
-    <Compile Include="ProgramForTesting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\ServiceReference1\DTO.xsd">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="Connected Services\ServiceReference1\SC.BL.Domain.xsd">
       <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\ServiceReference1\SC.UI.CA.ServiceReference1.TicketDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceReference1\SC.UI.CA.ServiceReference1.TicketResponseDTO.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReference1\service.wsdl" />
     <None Include="Connected Services\ServiceReference1\service.xsd">
@@ -86,10 +92,6 @@
     <ProjectReference Include="..\BL\BL.csproj">
       <Project>{ee3e2f39-d78f-4f79-8fde-5725d8d811e6}</Project>
       <Name>BL</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\Domain\Domain.csproj">
-      <Project>{f5b3ba5b-091d-4eb6-9138-e19842d49e43}</Project>
-      <Name>Domain</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

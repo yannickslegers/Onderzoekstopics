@@ -11,12 +11,23 @@
     <xs:sequence>
       <xs:element minOccurs="0" name="AccountId" type="xs:int" />
       <xs:element minOccurs="0" name="DateOpened" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="Responses" nillable="true" type="tns:ArrayOfTicketResponse" />
       <xs:element minOccurs="0" name="State" type="tns:TicketState" />
       <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="TicketNumber" type="xs:int" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="Ticket" nillable="true" type="tns:Ticket" />
+  <xs:complexType name="ArrayOfTicketResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketResponse" nillable="true" type="tns:TicketResponse" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTicketResponse" nillable="true" type="tns:ArrayOfTicketResponse" />
+  <xs:complexType name="TicketResponse">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:element name="TicketResponse" nillable="true" type="tns:TicketResponse" />
   <xs:simpleType name="TicketState">
     <xs:annotation>
       <xs:appinfo>
@@ -47,20 +58,4 @@
     </xs:list>
   </xs:simpleType>
   <xs:element name="TicketState" nillable="true" type="tns:TicketState" />
-  <xs:complexType name="ArrayOfTicketResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TicketResponse" nillable="true" type="tns:TicketResponse" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTicketResponse" nillable="true" type="tns:ArrayOfTicketResponse" />
-  <xs:complexType name="TicketResponse">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Date" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="Id" type="xs:int" />
-      <xs:element minOccurs="0" name="IsClientResponse" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Ticket" nillable="true" type="tns:Ticket" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TicketResponse" nillable="true" type="tns:TicketResponse" />
 </xs:schema>

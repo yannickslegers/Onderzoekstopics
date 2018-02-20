@@ -33,3 +33,5 @@ C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFS
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\obj\Debug\WCFService.csprojResolveAssemblyReference.cache
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\obj\Debug\WCFService.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\obj\Debug\WCFService.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\bin\Debug\DTO.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\bin\Debug\DTO.pdb

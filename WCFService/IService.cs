@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using SC.BL;
 using SC.BL.Domain;
+using DTO;
 
 namespace WCFService
 {
@@ -18,13 +19,13 @@ namespace WCFService
  
         // TODO: Add your service operations here
         [OperationContract]
-        List<Ticket> GetTickets();
+        List<TicketDTO> GetTickets();
         [OperationContract]
-        Ticket GetTicket(int ticketNumber);
+        TicketDTO GetTicket(int ticketNumber);
         [OperationContract]
-        Ticket AddTicket(int accountId, string question);
+        TicketDTO AddTicket(int accountId, string question);
         [OperationContract]
-        Ticket AddHardwareTicket(int accountId, string device, string problem);
+        TicketDTO AddHardwareTicket(int accountId, string device, string problem);
         [OperationContract]
         void ChangeTicket(Ticket ticket);
         [OperationContract]
@@ -33,9 +34,9 @@ namespace WCFService
         void RemoveTicket(int ticketNumber);
 
         [OperationContract]
-        IEnumerable<TicketResponse> GetTicketResponses(int ticketNumber);
+        IEnumerable<TicketResponseDTO> GetTicketResponses(int ticketNumber);
         [OperationContract]
-        TicketResponse AddResponses(int ticketNumber, string response, bool isClientResponse);
+        TicketResponseDTO AddResponse(int ticketNumber, string response, bool isClientResponse);
     }
 
     // Use a data contract as illustrated in the sample below to add composite types to service operations.

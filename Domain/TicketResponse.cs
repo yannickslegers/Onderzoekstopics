@@ -11,16 +11,15 @@ namespace SC.BL.Domain
     [DataContract]
     public class TicketResponse : IValidatableObject
     {
-        [DataMember]
         public int Id { get; set; }
-        [DataMember]
+
         [Required]
         public string Text { get; set; }
-        [DataMember]
+
         public DateTime Date { get; set; }
-        [DataMember]
+
         public bool IsClientResponse { get; set; }
-        [DataMember]
+
         [Required]
         public Ticket Ticket { get; set; }
 

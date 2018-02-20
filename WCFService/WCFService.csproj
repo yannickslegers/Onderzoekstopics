@@ -62,6 +62,10 @@
       <Project>{f5b3ba5b-091d-4eb6-9138-e19842d49e43}</Project>
       <Name>Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{961454d4-0719-4b88-8582-fc14df440c4b}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>

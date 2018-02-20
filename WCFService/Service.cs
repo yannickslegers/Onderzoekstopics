@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using SC.BL;
 using SC.BL.Domain;
+using DTO;
 
 namespace WCFService
 {
@@ -11,24 +12,31 @@ namespace WCFService
     {
         private ITicketManager mgr = new TicketManager();
 
-        public List<Ticket> GetTickets()
+        public List<TicketDTO> GetTickets()
         {
-            return mgr.GetTickets();
+            var tickets = mgr.GetTickets();
+            var ticketsDTO = new List<TicketDTO>();
+            foreach(var ticket in tickets)
+            {
+                ticketsDTO.Add(new TicketDTO(ticket));
+            }
+            return ticketsDTO;
         }
 
-        public Ticket GetTicket(int ticketNumber)
+        public TicketDTO GetTicket(int ticketNumber)
         {
-            return mgr.GetTicket(ticketNumber);
+            return new TicketDTO(mgr.GetTicket(ticketNumber));
         }
 
-        public Ticket AddTicket(int accountId, string question)
+        public TicketDTO AddTicket(int accountId, string question)
         {
-            return mgr.AddTicket(accountId, question);
+            return new TicketDTO(mgr.AddTicket(accountId, question));
         }
 
-        public Ticket AddHardwareTicket(int accountId, string device, string problem)
+        public TicketDTO AddHardwareTicket(int accountId, string device, string problem)
         {
-            return mgr.AddTicket(accountId, device, problem);
+            //TODO: hardwareticket dto maken
+            return new TicketDTO(mgr.AddTicket(accountId, device, problem));
         }
 
         public void ChangeTicket(Ticket ticket)
@@ -46,14 +54,19 @@ namespace WCFService
             mgr.RemoveTicket(ticketNumber);
         }
 
-        public IEnumerable<TicketResponse> GetTicketResponses(int ticketNumber)
+        public IEnumerable<TicketResponseDTO> GetTicketResponses(int ticketNumber)
         {
-            return mgr.GetTicketResponses(ticketNumber);
+            var responses = new List<TicketResponseDTO>();
+            foreach(var response in mgr.GetTicketResponses(ticketNumber))
+            {
+                responses.Add(new TicketResponseDTO(response));
+            }
+            return responses.AsEnumerable();
         }
 
-        public TicketResponse AddResponses(int ticketNumber, string response, bool isClientResponse)
+        public TicketResponseDTO AddResponse(int ticketNumber, string response, bool isClientResponse)
         {
-            return mgr.AddTicketResponse(ticketNumber, response, isClientResponse);
+            return new TicketResponseDTO(mgr.AddTicketResponse(ticketNumber, response, isClientResponse));
         }
 
         
