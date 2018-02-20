@@ -8,21 +8,20 @@ using System.Web.Mvc;
 using SC.BL;
 using SC.BL.Domain;
 using SC.UI.Web.MVC.Models;
-
-
+using SC.UI.Web.MVC.ServiceReference1;
 
 namespace SC.UI.Web.MVC.Controllers
 {
     public class TicketController : Controller
     {
         private ITicketManager mgr = new TicketManager();
-
+        private static readonly ServiceReference1.ServiceClient _client = new ServiceClient();
         // GET: Ticket
         public ActionResult Index()
         {
-            
-            
-            IEnumerable<Ticket> tickets = mgr.GetTickets();
+
+
+            IEnumerable<TicketDTO> tickets = _client.GetTickets();
             
             
             return View(tickets);
@@ -32,9 +31,9 @@ namespace SC.UI.Web.MVC.Controllers
         // GET: Ticket/Details/5
         public ActionResult Details(int id)
         {
-            Ticket ticket = mgr.GetTicket(id);
+            TicketDTO ticket = _client.GetTicket(id);
 
-            var responses = mgr.GetTicketResponses(id).ToList();
+            var responses = _client.GetTicketResponses(id);
 
             ticket.Responses = responses;
             // OF: via ViewBag
@@ -67,7 +66,7 @@ namespace SC.UI.Web.MVC.Controllers
         {
             if (ModelState.IsValid)
             {
-                Ticket ticket = mgr.AddTicket(newTicket.AccId, newTicket.Problem);
+                TicketDTO ticket = _client.AddTicket(newTicket.AccId, newTicket.Problem);
 
                 return RedirectToAction("Details", new { id = ticket.TicketNumber });
             }
@@ -78,17 +77,17 @@ namespace SC.UI.Web.MVC.Controllers
         // GET: Ticket/Edit/5
         public ActionResult Edit(int id)
         {
-            Ticket ticket = mgr.GetTicket(id);
+            TicketDTO ticket = _client.GetTicket(id);
             return View(ticket);
         }
 
         // POST: Ticket/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, Ticket ticket)
+        public ActionResult Edit(int id, TicketDTO ticket)
         {
             if (ModelState.IsValid)
             {
-                mgr.ChangeTicket(ticket);
+                _client.ChangeTicket(ticket);
 
                 return RedirectToAction("Index");
             }
@@ -99,7 +98,7 @@ namespace SC.UI.Web.MVC.Controllers
         // GET: Ticket/Delete/5
         public ActionResult Delete(int id)
         {
-            Ticket ticket = mgr.GetTicket(id);
+            TicketDTO ticket = _client.GetTicket(id);
             return View(ticket);
         }
 
@@ -109,7 +108,7 @@ namespace SC.UI.Web.MVC.Controllers
         {
             try
             {
-                mgr.RemoveTicket(id);
+                _client.RemoveTicket(id);
 
                 return RedirectToAction("Index");
             }

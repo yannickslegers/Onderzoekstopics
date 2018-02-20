@@ -125,7 +125,6 @@ C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-M
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\Newtonsoft.Json.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\SC.BL.dll
-C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\SC.BL.Domain.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\System.Net.Http.Formatting.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\System.Web.Helpers.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-MVC\bin\System.Web.Http.dll

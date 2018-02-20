@@ -1,0 +1,127 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import namespace="http://schemas.datacontract.org/2004/07/DTO" />
+  <xs:element name="GetTickets">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketsResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="GetTicketsResult" nillable="true" type="q1:ArrayOfTicketDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="GetTicketResult" nillable="true" type="q2:TicketDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:int" />
+        <xs:element minOccurs="0" name="question" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="AddTicketResult" nillable="true" type="q3:TicketDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddHardwareTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="accountId" type="xs:int" />
+        <xs:element minOccurs="0" name="device" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="problem" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddHardwareTicketResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="AddHardwareTicketResult" nillable="true" type="q4:TicketDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q5="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="ticket" nillable="true" type="q5:TicketDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTicketResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTicketStateToClosed">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ChangeTicketStateToClosedResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveTicket">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="RemoveTicketResponse">
+    <xs:complexType>
+      <xs:sequence />
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketResponses">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketNumber" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetTicketResponsesResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="GetTicketResponsesResult" nillable="true" type="q6:ArrayOfTicketResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ticketNumber" type="xs:int" />
+        <xs:element minOccurs="0" name="response" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="isClientResponse" type="xs:boolean" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="AddResponseResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q7="http://schemas.datacontract.org/2004/07/DTO" minOccurs="0" name="AddResponseResult" nillable="true" type="q7:TicketResponseDTO" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

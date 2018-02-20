@@ -27,7 +27,7 @@ namespace WCFService
         [OperationContract]
         TicketDTO AddHardwareTicket(int accountId, string device, string problem);
         [OperationContract]
-        void ChangeTicket(Ticket ticket);
+        void ChangeTicket(TicketDTO ticket);
         [OperationContract]
         void ChangeTicketStateToClosed(int ticketNumber);
         [OperationContract]

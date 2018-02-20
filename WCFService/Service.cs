@@ -39,9 +39,31 @@ namespace WCFService
             return new TicketDTO(mgr.AddTicket(accountId, device, problem));
         }
 
-        public void ChangeTicket(Ticket ticket)
+        public void ChangeTicket(TicketDTO ticket)
         {
-            mgr.ChangeTicket(ticket);
+            Ticket t = new Ticket();
+            t.AccountId = ticket.AccountId;
+            t.DateOpened = ticket.DateOpenend;
+            t.State = ticket.State;
+            t.TicketNumber = ticket.TicketNumber;
+            t.Text = ticket.Text;
+            if (ticket.Responses != null)
+            {
+                foreach (var response in ticket.Responses)
+                {
+                    TicketResponse rsp = new TicketResponse();
+                    rsp.Id = response.Id;
+                    rsp.IsClientResponse = response.IsClientResponse;
+                    rsp.Date = response.Date;
+                    rsp.Text = response.Text;
+                    rsp.Ticket = t;
+                    t.Responses.Add(rsp);
+                }
+            }
+            else
+                t.Responses = new List<TicketResponse>();
+            
+            mgr.ChangeTicket(t);
         }
 
         public void ChangeTicketStateToClosed(int ticketNumber)
