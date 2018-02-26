@@ -19,7 +19,7 @@ namespace DTO
             this.TicketNumber = ticket.TicketNumber;
             this.AccountId = ticket.AccountId;
             this.Text = ticket.Text;
-            this.DateOpenend = ticket.DateOpened;
+            this.DateOpened = ticket.DateOpened;
             this.State = ticket.State;
             List<TicketResponseDTO> responses = new List<TicketResponseDTO>();
             if (ticket.Responses != null)
@@ -42,7 +42,7 @@ namespace DTO
         [DataMember]
         public string Text { get; set; }
         [DataMember]
-        public DateTime DateOpenend { get; set; }
+        public DateTime DateOpened { get; set; }
         [DataMember]
         public TicketState State { get; set; }
         [DataMember]

@@ -10,7 +10,7 @@
   <xs:complexType name="TicketDTO">
     <xs:sequence>
       <xs:element minOccurs="0" name="AccountId" type="xs:int" />
-      <xs:element minOccurs="0" name="DateOpenend" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="DateOpened" type="xs:dateTime" />
       <xs:element minOccurs="0" name="Responses" nillable="true" type="tns:ArrayOfTicketResponseDTO" />
       <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SC.BL.Domain" minOccurs="0" name="State" type="q1:TicketState" />
       <xs:element minOccurs="0" name="Text" nillable="true" type="xs:string" />

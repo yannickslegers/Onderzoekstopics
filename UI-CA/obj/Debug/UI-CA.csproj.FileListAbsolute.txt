@@ -76,3 +76,14 @@ C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-C
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\obj\Debug\SC.UI.CA.pdb
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.Domain.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\SC.BL.Domain.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.Owin.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.Owin.Security.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Owin.dll
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.Owin.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\UI-CA\bin\Debug\Microsoft.Owin.Security.xml

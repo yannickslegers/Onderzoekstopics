@@ -7,7 +7,6 @@ using System.Text;
 namespace SC.BL.Domain
 {
     [DataContract]
-    [Flags]
     public enum TicketState : byte
     {
         [EnumMember]

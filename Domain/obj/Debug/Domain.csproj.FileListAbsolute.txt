@@ -22,3 +22,4 @@ C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\Doma
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\Domain\bin\Debug\SC.BL.Domain.pdb
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\Domain\obj\Debug\SC.BL.Domain.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\Domain\obj\Debug\SC.BL.Domain.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\Domain\obj\Debug\Domain.csprojResolveAssemblyReference.cache

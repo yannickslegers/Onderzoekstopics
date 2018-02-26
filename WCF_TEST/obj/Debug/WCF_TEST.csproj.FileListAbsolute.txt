@@ -1,7 +1,0 @@
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\bin\Debug\WCF_TEST.dll.config
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\bin\Debug\WCF_TEST.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\bin\Debug\WCF_TEST.pdb
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\obj\Debug\WCF_TEST.csprojResolveAssemblyReference.cache
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\obj\Debug\WCF_TEST.csproj.CoreCompileInputs.cache
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\obj\Debug\WCF_TEST.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCF_TEST\obj\Debug\WCF_TEST.pdb

@@ -27,7 +27,7 @@ namespace SC.UI.Web.MVC.ServiceReference1 {
         private int AccountIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private System.DateTime DateOpenendField;
+        private System.DateTime DateOpenedField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private SC.UI.Web.MVC.ServiceReference1.TicketResponseDTO[] ResponsesField;
@@ -65,14 +65,14 @@ namespace SC.UI.Web.MVC.ServiceReference1 {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public System.DateTime DateOpenend {
+        public System.DateTime DateOpened {
             get {
-                return this.DateOpenendField;
+                return this.DateOpenedField;
             }
             set {
-                if ((this.DateOpenendField.Equals(value) != true)) {
-                    this.DateOpenendField = value;
-                    this.RaisePropertyChanged("DateOpenend");
+                if ((this.DateOpenedField.Equals(value) != true)) {
+                    this.DateOpenedField = value;
+                    this.RaisePropertyChanged("DateOpened");
                 }
             }
         }

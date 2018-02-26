@@ -43,7 +43,7 @@ namespace WCFService
         {
             Ticket t = new Ticket();
             t.AccountId = ticket.AccountId;
-            t.DateOpened = ticket.DateOpenend;
+            t.DateOpened = ticket.DateOpened;
             t.State = ticket.State;
             t.TicketNumber = ticket.TicketNumber;
             t.Text = ticket.Text;
