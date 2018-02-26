@@ -8,9 +8,9 @@ namespace SC.UI.Web.MVC.Controllers.SignalR
 {
     public class MyHub : Hub
     {
-        public void Hello()
+        public void Send(string name, string message)
         {
-            Clients.All.hello();
+            Clients.All.broadcastMessage(name, message);
         }
     }
 }
