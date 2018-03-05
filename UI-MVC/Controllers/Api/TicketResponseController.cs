@@ -5,18 +5,19 @@ using System.Net;
 using System.Net.Http;
 using System.Web.Http;
 
-using SC.BL;
-using SC.BL.Domain;
+using SC.UI.Web.MVC.ServiceReference1;
 using SC.UI.Web.MVC.Models;
+
 namespace SC.UI.Web.MVC.Controllers.Api
 {
     public class TicketResponseController : ApiController
     {
-        private ITicketManager mgr = new TicketManager();
+        
+        private static readonly ServiceReference1.ServiceClient _client = new ServiceClient();
 
         public IHttpActionResult Get(int ticketNumber)
         {
-            IEnumerable<TicketResponse> responses = mgr.GetTicketResponses(ticketNumber);
+            IEnumerable<TicketResponseDTO> responses = _client.GetTicketResponses(ticketNumber);
 
             if (responses == null || responses.Count() == 0)
                 return StatusCode(HttpStatusCode.NoContent);
@@ -26,7 +27,7 @@ namespace SC.UI.Web.MVC.Controllers.Api
 
         public IHttpActionResult Post(NewTicketResponseDTO response)
         {
-            TicketResponse createdResponse = mgr.AddTicketResponse(response.TicketNumber, response.ResponseText, response.IsClientResponse);
+            TicketResponseDTO createdResponse = _client.AddResponse(response.TicketNumber, response.ResponseText, response.IsClientResponse);
 
             if (createdResponse == null)
                 return BadRequest("Er is iets misgelopen bij het registreren van het antwoord!");
@@ -42,8 +43,7 @@ namespace SC.UI.Web.MVC.Controllers.Api
                 Id = createdResponse.Id,
                 Text = createdResponse.Text,
                 Date = createdResponse.Date,
-                IsClientResponse = createdResponse.IsClientResponse,
-                TicketNumberOfTicket = createdResponse.Ticket.TicketNumber
+                IsClientResponse = createdResponse.IsClientResponse
             };
 
             return CreatedAtRoute("DefaultApi",

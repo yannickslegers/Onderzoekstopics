@@ -14,7 +14,7 @@ namespace SC.UI.Web.MVC.Controllers
 {
     public class TicketController : Controller
     {
-        private ITicketManager mgr = new TicketManager();
+       // private ITicketManager mgr = new TicketManager();
         private static readonly ServiceReference1.ServiceClient _client = new ServiceClient();
         // GET: Ticket
         public ActionResult Index()

@@ -1,7 +1,7 @@
-C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\bin\Debug\DTO.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\bin\Debug\DTO.pdb
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\bin\Debug\SC.BL.Domain.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\bin\Debug\SC.BL.Domain.pdb
+C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.pdb
