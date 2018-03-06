@@ -34,7 +34,7 @@ chatHub.client.messageReceived = function (username, message, userImg, time) {
 }
 
 function addMessage(userName, message, time, userImg) {
-    var currUser = $('#userName')
+    var currUser = $("#userName").val()
 
     if (currUser === userName) {
         $(".messages").append("<li class=\"right\"><div class=\"msgText\">" + message + "</div><img src=\"" + userImg + "\" class=\"userImage img-circle\"><div class=\"userName\">" + userName + "</div><div class=\"msgTime\">" + time + "</div></li>")

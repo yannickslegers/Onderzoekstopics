@@ -263,6 +263,7 @@
     <Content Include="Views\Chat\UserChat.cshtml" />
     <Content Include="Views\Chat\Admin.cshtml" />
     <Content Include="Views\Chat\_ChatBoxPartial.cshtml" />
+    <Content Include="Views\Chat\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

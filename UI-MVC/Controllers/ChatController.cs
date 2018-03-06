@@ -26,5 +26,10 @@ namespace SC.UI.Web.MVC.Controllers
         {
             return View();
         }
+
+        public ActionResult Login()
+        {
+            return View();
+        }
     }
 }
