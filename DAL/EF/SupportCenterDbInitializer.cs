@@ -90,7 +90,7 @@ namespace SC.DAL.EF
                 UserName = "admin",
                 Password = "admin",
                 Email = "admin@admin.com",
-                Image = "~/Images/dummy.jpg"
+                Image = "/Images/dummy.jpg"
             };
             context.Users.Add(admin);
 

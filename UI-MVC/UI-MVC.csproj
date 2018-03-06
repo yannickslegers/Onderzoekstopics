@@ -151,9 +151,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App_Code\ConnClass.cs" />
-    <Compile Include="App_Code\Messages.cs" />
-    <Compile Include="App_Code\Users.cs" />
+    <Compile Include="Models\SignalR\ConnClass.cs" />
+    <Compile Include="Models\SignalR\Message.cs" />
+    <Compile Include="Models\SignalR\User.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
@@ -166,6 +166,7 @@
     <Compile Include="Controllers\Api\TicketController.cs" />
     <Compile Include="Controllers\Api\TicketResponseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="SignalR\MyHub.cs" />
     <Compile Include="SignalR\Startup.cs" />
     <Compile Include="Controllers\TicketController.cs" />
@@ -224,6 +225,7 @@
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\FontAwesome.otf" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\ChatSR.js" />
     <Content Include="Scripts\date.format.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -258,10 +260,12 @@
     <Content Include="Views\Ticket\Delete.cshtml" />
     <Content Include="Views\Ticket\Create.cshtml" />
     <Content Include="Views\Ticket\_TicketResponsesPartial.cshtml" />
+    <Content Include="Views\Chat\UserChat.cshtml" />
+    <Content Include="Views\Chat\Admin.cshtml" />
+    <Content Include="Views\Chat\_ChatBoxPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\SignalR\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

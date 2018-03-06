@@ -22,3 +22,62 @@ select,
 textarea {
     max-width: 280px;
 }
+
+/*SignalR ChatPartial*/
+.chatBox {
+    
+}
+
+.chatHeader {
+    height: 41px;
+    width: 75%;
+    background-color: dodgerblue;
+    color: white;
+}
+
+.chatHeader > .userImage {
+    margin: 3px;
+    width: 35px;
+    height: 35px;
+    
+}
+
+.chatMessage {
+    width: 75%;
+    height: 500px;
+    border-color: lightgray;
+    border: solid 1px;
+}
+
+.chatSend {
+    width: 75%;
+    height: 40px;
+}
+#messageText{
+    width:75%;
+    height: 100%;
+    float: left;
+    max-width: 75%;
+    overflow-y: auto;
+    resize: none;
+}
+
+#sendBtn{
+    width:25%;
+    height: 100%;
+    float: right;
+}
+
+/*Html inserted by javascript*/
+.messageDetails {
+}
+
+.chatMessage > .messages > .left > .userImage {
+    width: 35px;
+    height: 35px;
+}
+
+.messageBubble {
+}
+
+

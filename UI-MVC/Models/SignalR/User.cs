@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace SC.UI.Web.MVC.App_Code
+namespace SC.UI.Web.MVC.Models.SignalR
 {
-    public class Users
+    public class User
     {
         public string ConnectionId { get; set; }
 
@@ -14,5 +14,12 @@ namespace SC.UI.Web.MVC.App_Code
         public string UserImage { get; set; }
 
         public string LoginTime { get; set; }
+
+        public List<Message> Messages { get; set; }
+
+        public void AddMessage(Message message)
+        {
+            this.Messages.Add(message);
+        }
     }
 }

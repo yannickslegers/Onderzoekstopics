@@ -1,0 +1,17 @@
+﻿@model SC.UI.Web.MVC.Models.SignalR.User
+<div class="chatBox">
+    <div class="chatHeader">
+        <img class="userImage img-circle" src=@Model.UserImage />
+        @Html.DisplayFor(model => model.UserName)
+    </div>
+    <div class="chatMessage">
+       
+       <!--Data inserted by javascript-->
+       <ul class="messages"></ul>
+       
+    </div>
+    <div class="chatSend">
+        <textarea type="text" id="messageText"></textarea>
+        <button type="submit" id="sendBtn">Send</button>
+    </div>
+</div>

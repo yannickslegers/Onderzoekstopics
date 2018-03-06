@@ -6,7 +6,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Configuration;
 
-namespace SC.UI.Web.MVC.App_Code
+namespace SC.UI.Web.MVC.Models.SignalR
 {
     public class ConnClass
     {

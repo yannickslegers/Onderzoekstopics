@@ -3,24 +3,24 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using Microsoft.AspNet.SignalR;
-using SC.UI.Web.MVC.App_Code;
+using SC.UI.Web.MVC.Models.SignalR;
 
 namespace SC.UI.Web.MVC
 {
-    public class MyHub : Hub
+    public class ChatHub : Hub
     {
-        static List<Users> ConnectedUsers = new List<Users>();
-        static List<Messages> CurrentMessage = new List<Messages>();
+        static List<User> ConnectedUsers = new List<User>();
+        static List<Message> CurrentMessage = new List<Message>();
         ConnClass ConnC = new ConnClass();
 
-        public void Conntect(string userName)
+        public void Connect(string userName)
         {
             var id = Context.ConnectionId;
             if(ConnectedUsers.Count(x => x.ConnectionId == id) == 0)
             {
                 string userImg = GetUserImage(userName);
                 string loginTime = DateTime.Now.ToString();
-                ConnectedUsers.Add(new Users { ConnectionId = id, UserName = userName, UserImage = userImg, LoginTime = loginTime });
+                ConnectedUsers.Add(new User { ConnectionId = id, UserName = userName, UserImage = userImg, LoginTime = loginTime });
 
                 //send to Caller
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
@@ -43,10 +43,10 @@ namespace SC.UI.Web.MVC
 
         public void AddMessageInCache(string userName, string message, string time, string userImg)
         {
-            CurrentMessage.Add(new Messages
+            CurrentMessage.Add(new Message
             {
                 UserName = userName,
-                Message = message,
+                Text = message,
                 Time = time,
                 UserImage = userName
             });
@@ -57,7 +57,7 @@ namespace SC.UI.Web.MVC
 
         public string GetUserImage(string userName)
         {
-            string imgName = "";
+            string imgName = "/Images/dummy.jpg";
 
             try
             {
@@ -69,19 +69,6 @@ namespace SC.UI.Web.MVC
                 //Exception handling
             }
             return imgName;
-        }
-
-        public override System.Threading.Tasks.Task OnDisconnected(bool stopCalled)
-        {
-            var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
-            if(item != null)
-            {
-                ConnectedUsers.Remove(item);
-
-                var id = Context.ConnectionId;
-                Clients.All.onUserDisconnected(id, item.UserImage);
-            }
-            return base.OnDisconnected(stopCalled);
         }
     }
 }

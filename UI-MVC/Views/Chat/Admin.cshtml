@@ -1,0 +1,23 @@
+﻿@model SC.UI.Web.MVC.Models.SignalR.User
+@{
+    ViewBag.Title = "Admin";
+}
+
+<h2 id="userName">@Model.UserName</h2>
+
+<div class="row">
+    <div class="col-lg-1">
+        <!--whitespace?-->
+    </div>
+    <div class="col-lg-7">
+        @Html.Partial("_ChatBoxPartial", @Model)
+    </div>
+    <div class="col-lg-3">
+
+    </div>
+</div>
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.signalR-2.2.2.min.js"></script>
+<script src="~/Scripts/date.format.js"></script>
+<script src="~/signalr/hubs"></script>
+<script src="~/Scripts/ChatSR.js"></script>
