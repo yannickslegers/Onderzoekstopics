@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -23,9 +24,28 @@
                     <li>@Html.ActionLink("Home", "Index", "Home")</li>
                     <li>@Html.ActionLink("About", "About", "Home")</li>
                     <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                    <li>@Html.ActionLink("SignalR Admin","Admin","Chat")</li>
-                    <li>@Html.ActionLink("SignalR User", "UserChat", "Chat")</li>
-                    <li>@Html.ActionLink("Login","Login", "Chat")</li>
+                    @if (Session["LoggedIn"].Equals("true"))
+                    {
+                        if (Session["UserName"].Equals("admin"))
+                        {
+                            <li>@Html.ActionLink("SignalR Admin", "Admin", "Chat")</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("SignalR User", "UserChat", "Chat")</li>
+                        }
+                    }                     
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    @if (Session["LoggedIn"].Equals("true"))
+                    {
+                        <li>@Html.ActionLink("Logout","Logout","Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Login", "Login", "Home")</li>
+                    }
+                    
                 </ul>
             </div>
         </div>

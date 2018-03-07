@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using Microsoft.AspNet.SignalR;
 using SC.UI.Web.MVC.Models.SignalR;
+using System.Threading.Tasks;
 
 namespace SC.UI.Web.MVC
 {
@@ -20,39 +20,63 @@ namespace SC.UI.Web.MVC
             {
                 string userImg = GetUserImage(userName);
                 string loginTime = DateTime.Now.ToString();
-                ConnectedUsers.Add(new User { ConnectionId = id, UserName = userName, UserImage = userImg, LoginTime = loginTime });
+                ConnectedUsers.Add(new User
+                {
+                    ConnectionId = id,
+                    UserImage = userImg,
+                    UserName = userName,
+                    LoginTime = loginTime
+                });
 
-                //send to Caller
+                // send to caller
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
 
-                //send to All except caller client
+                // send to all except caller client
                 Clients.AllExcept(id).onNewUserConnected(id, userName, userImg, loginTime);
             }
+        }
+
+        public override Task OnDisconnected(bool stopCalled)
+        {
+            var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
+            if (item != null)
+            {
+                ConnectedUsers.Remove(item);
+
+                var id = Context.ConnectionId;
+                Clients.All.onUserDisconnected(id, item.UserName);
+
+            }
+
+            return base.OnDisconnected(stopCalled);
         }
 
         public void SendMessageToAll(string userName, string message, string time)
         {
             string userImg = GetUserImage(userName);
-
-            //store last 100 messages in cache
-            AddMessageInCache(userName, message, time, userImg);
-
+            AddMessageinCache(userName, message, time, userImg);
             //Broadcast message
             Clients.All.messageReceived(userName, message, time, userImg);
         }
 
-        public void AddMessageInCache(string userName, string message, string time, string userImg)
+        public void SendPrivateMessage(string toUserId, string message, string time)
         {
-            CurrentMessage.Add(new Message
-            {
-                UserName = userName,
-                Text = message,
-                Time = time,
-                UserImage = userName
-            });
+            string fromUserId = Context.ConnectionId;
 
-            if (CurrentMessage.Count > 100)
-                CurrentMessage.RemoveAt(0);
+            var toUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == toUserId);
+            var fromUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == fromUserId);
+            var userName = fromUser.UserName;
+            if (toUser != null && fromUser != null)
+            {
+                string CurrentDateTime = DateTime.Now.ToString();
+                string userImg = GetUserImage(fromUser.UserName);
+                AddMessageinCache(userName, message, time, userImg);
+                // send to 
+                Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.UserName, message, userImg, CurrentDateTime);
+
+                // send to caller user
+                Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message, userImg, CurrentDateTime);
+            }
         }
 
         public string GetUserImage(string userName)
@@ -69,6 +93,15 @@ namespace SC.UI.Web.MVC
                 //Exception handling
             }
             return imgName;
+        }
+
+        private void AddMessageinCache(string userName, string message, string time, string UserImg)
+        {
+            CurrentMessage.Add(new Message { UserName = userName, Text = message, Time = time, UserImage = UserImg });
+
+            if (CurrentMessage.Count > 100)
+                CurrentMessage.RemoveAt(0);
+
         }
     }
 }
