@@ -25,11 +25,14 @@ textarea {
 
 /*SignalR ChatPartial*/
 .chatBox {
+    border-color: lightgray;
+    border-style: solid;
+    border-width: 1px;
 }
 
 .chatHeader {
     height: 41px;
-    width: 75%;
+    width: 100%;
     background-color: dodgerblue;
     color: white;
 }
@@ -41,14 +44,13 @@ textarea {
     }
 
 .chatMessage {
-    width: 75%;
+    width: 100%;
     height: 500px;
-    border-color: lightgray;
-    border: solid 1px;
+    border: solid 1px lightgrey;
 }
 
 .chatSend {
-    width: 75%;
+    width: 100%;
     height: 40px;
 }
 
@@ -67,7 +69,12 @@ textarea {
     float: right;
 }
 
+#clearBtn{
+    float:right;
+}
+
 /*Html inserted by javascript*/
+/*#region Messages*/
 
 .chatMessage > .messages {
     padding: 10px;
@@ -173,11 +180,75 @@ textarea {
     .chat-info .right > .chat-text:before {
         border-left-color: #00c0ef;
     }
+/*#endregion Messages*/
+
+/*#region Users*/
+.onlineUsersBox {
+    border: solid 1px lightgrey;
+    height: 581px;
+}
+.usersHeader {
+    height: 41px;
+    width: 100%;
+    background-color: dodgerblue;
+    color: white;
+    text-align: center;
+}
+
+    .usersHeader p {
+        line-height: 41px;
+        font-size: 20px;
+    }
+.onlineUsers {
+    padding: 10px;
+    height: 100%;
+    overflow: auto;
+}
+.users{
+
+}
+.box-user{
+    max-height: 80px;
+    display: flex;
+    flex-direction: row;
+}
+.box-user:hover{
+    background-color: #efeded;
+}
+
+.img-user{
+    width: 75px;
+    height: 75px;
+    margin: 1px;
+}
+.user-text{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.user-username{
+    margin-top: 25px;
+}
+.user-username b{
+    font-size: 20px;
+}
+
+.user-date{
+    margin-top:-15px;
+}
+
+.selected{
+    background-color: #b4b4b4
+}
+/*#endregion Users*/
+
 
 
 
 
 /* LOGIN MODAL */
+/*#region Login*/
+
 .loginmodal-container {
     padding: 30px;
     max-width: 350px;
@@ -271,3 +342,4 @@ textarea {
 .login-help {
     font-size: 12px;
 }
+/*#endregion Login*/

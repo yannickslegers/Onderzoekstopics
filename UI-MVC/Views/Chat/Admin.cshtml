@@ -9,10 +9,23 @@
     <div class="col-lg-1">
         <!--whitespace?-->
     </div>
-    <div class="col-lg-7">
-        @Html.Partial("_ChatBoxPartial", @Model)
+    <div class="col-lg-6 chatPartial">
+        <!--Chat Partial View-->
+        @Html.Partial("_ChatBoxPartial", @Model.UserName)
     </div>
-    <div class="col-lg-3">
+    <div class="col-lg-5">
+        <div class="onlineUsersBox">
+            <div class="usersHeader">
+                <p>Online Users</p>
+            </div>
+            <div class="onlineUsers">
+                <div class="users">
+                    <!--All the online users-->
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="hidden selectedUser">
 
     </div>
 </div>

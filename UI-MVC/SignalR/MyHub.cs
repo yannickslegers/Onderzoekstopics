@@ -36,6 +36,11 @@ namespace SC.UI.Web.MVC
             }
         }
 
+        public override Task OnConnected()
+        {
+            return base.OnConnected();
+        }
+
         public override Task OnDisconnected(bool stopCalled)
         {
             var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
@@ -54,7 +59,7 @@ namespace SC.UI.Web.MVC
         public void SendMessageToAll(string userName, string message, string time)
         {
             string userImg = GetUserImage(userName);
-            //AddMessageinCache(userName, message, time, userImg);
+            AddMessageinCache(userName, message, time, userImg);
             //Broadcast message
             Clients.All.messageReceived(userName, message, time, userImg);
         }
@@ -104,6 +109,11 @@ namespace SC.UI.Web.MVC
             if (CurrentMessage.Count > 100)
                 CurrentMessage.RemoveAt(0);
 
+        }
+
+        public void ClearMessageCache()
+        {
+            CurrentMessage.Clear();
         }
     }
 }
