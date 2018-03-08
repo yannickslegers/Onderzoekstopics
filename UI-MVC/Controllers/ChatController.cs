@@ -16,7 +16,10 @@ namespace SC.UI.Web.MVC.Controllers
 
         public ActionResult UserChat()
         {
-            return View();
+            User user = new User();
+            user.UserName = Session["UserName"].ToString();
+            user.UserImage = "/Images/dummy.jpg";
+            return View(user);
         }
     }
 }

@@ -54,28 +54,30 @@ namespace SC.UI.Web.MVC
         public void SendMessageToAll(string userName, string message, string time)
         {
             string userImg = GetUserImage(userName);
-            AddMessageinCache(userName, message, time, userImg);
+            //AddMessageinCache(userName, message, time, userImg);
             //Broadcast message
             Clients.All.messageReceived(userName, message, time, userImg);
         }
 
-        public void SendPrivateMessage(string toUserId, string message, string time)
+        public void SendPrivateMessage(string toUserName, string message, string time)
         {
             string fromUserId = Context.ConnectionId;
 
-            var toUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == toUserId);
+            var toUser = ConnectedUsers.FirstOrDefault(x => x.UserName.Equals(toUserName));
+            var toUserId = toUser.ConnectionId;
             var fromUser = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == fromUserId);
             var userName = fromUser.UserName;
             if (toUser != null && fromUser != null)
             {
-                string CurrentDateTime = DateTime.Now.ToString();
                 string userImg = GetUserImage(fromUser.UserName);
                 AddMessageinCache(userName, message, time, userImg);
                 // send to 
-                Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.UserName, message, userImg, CurrentDateTime);
+                //Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.UserName, message, userImg, CurrentDateTime);
+                Clients.Client(toUserId).messageReceived(fromUser.UserName, message, time, userImg);
 
                 // send to caller user
-                Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message, userImg, CurrentDateTime);
+                //Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message, userImg, CurrentDateTime);
+                //Clients.Caller.messageReceived(fromUser.UserName, message, CurrentDateTime, userImg);
             }
         }
 

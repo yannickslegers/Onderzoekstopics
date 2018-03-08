@@ -68,101 +68,113 @@ textarea {
 }
 
 /*Html inserted by javascript*/
+
 .chatMessage > .messages {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+    padding: 10px;
+    height: 100%;
+    overflow: auto;
+}
+.chat-msg,
+.chat-text{
+    display: block;
+}
+.chat-msg{
+    margin-bottom: 10px;
+}
+.chat-msg:before,
+.chat-msg:after {
+    content: " ";
+    display: table;
+}
+.chat-msg:after{
+    clear:both;
+}
+.chat-text {
+    border-radius: 5px;
+    position: relative;
+    padding: 5px 10px;
+    background: #d2d6de;
+    border: 1px solid #d2d6de;
+    margin: 5px 0 0 50px;
+    color: #444444;
+    font-size: 15px;
+    font-weight: normal;
+    max-width:50%;
+}
+    .chat-text:before,
+    .chat-text:after {
+        position: absolute;
+        right: 100%;
+        top: 15px;
+        border: solid transparent;
+        border-right-color: #d2d6de;
+        content: ' ';
+        height: 0;
+        width: 0;
+        pointer-events: none;
+    }
+    .chat-text:after {
+        border-width: 5px;
+        margin-top: -5px;
+    }
+    .chat-text:before {
+        border-width: 6px;
+        margin-top: -6px;
+    }
+.right .chat-text {
+    margin-right: 10px;
+    margin-left: 0;
+    float: right;
+}
+.left .chat-text{
+    float: left;
+    margin-right: 0;
+    margin-left: 10px;
+}
+.right .chat-text:after,
+.right .chat-text:before {
+    right: auto;
+    left: 100%;
+    border-right-color: transparent;
+    border-left-color: #d2d6de;
+}
+.chat-img {
+    border-radius: 50%;
+    float: left;
+    width: 40px;
+    height: 40px;
 }
 
-    .chatMessage > .messages > .left {
-        text-align: left;
-        padding-left: 10px;
+.right .chat-img {
+    float: right;
+}
+
+.chat-info {
+    display: block;
+    margin-bottom: 2px;
+    font-size: 12px;
+}
+
+.chat-name {
+    font-weight: 600;
+}
+
+.chat-timestamp {
+    color: #999;
+}
+
+.chat-info .right > .chat-text {
+    background: #00c0ef;
+    border-color: #00c0ef;
+    color: #ffffff;
+}
+
+    .chat-info .right > .chat-text:after,
+    .chat-info .right > .chat-text:before {
+        border-left-color: #00c0ef;
     }
 
-        .chatMessage > .messages > .left > .userImage {
-            width: 35px;
-            height: 35px;
-        }
 
-        .chatMessage > .messages > .left > .msgText {
-            position: relative;
-            background: #00aabb;
-            border-radius: .4em;
-            margin: 2px;
-            max-width: 50%;
-            min-height: 10px;
-            padding-right: 5px;
-        }
-
-            .chatMessage > .messages > .left > .msgText::after {
-                content: '';
-                position: absolute;
-                left: 0;
-                top: 50%;
-                width: 0;
-                height: 0;
-                border: 8px solid transparent;
-                border-right-color: #00aabb;
-                border-left: 0;
-                border-bottom: 0;
-                margin-top: -4px;
-                margin-left: -8px;
-            }
-
-        .chatMessage > .messages > .left > .userName {
-        }
-
-        .chatMessage > .messages > .left > .msgTime {
-        }
-
-    .chatMessage > .messages > .right {
-        text-align: right;
-        padding-right: 10px;
-        display: flex;
-        
-    }
-
-        .chatMessage > .messages > .right > .userImage {
-            width: 35px;
-            height: 35px;
-            justify-content: flex-end;
-            align-items: flex-start;
-        }
-
-        .chatMessage > .messages > .right > .msgText {
-            justify-content: flex-end;
-            align-items: flex-start;
-            position: relative;
-            background: #00aabb;
-            border-radius: .4em;
-            margin: 2px;
-            max-width: 50%;
-            min-height: 10px;
-            padding-right: 5px;
-        }
-
-            .chatMessage > .messages > .right > .msgText::after {
-                content: '';
-                position: absolute;
-                right: 0;
-                top: 50%;
-                width: 0;
-                height: 0;
-                border: 8px solid transparent;
-                border-left-color: #00aabb;
-                border-right: 0;
-                border-bottom: 0;
-                margin-top: -4px;
-                margin-right: -8px;
-            }
-
-        .chatMessage > .messages > .right > .userName {
-            align-content: flex-end;
-        }
-
-        .chatMessage > .messages > .right > .msgTime {
-            align-content: flex-end;
-        }
 
 
 /* LOGIN MODAL */

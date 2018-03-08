@@ -13,7 +13,7 @@ $.connection.hub.start().done(function () {
 
 function registerEvents(chatHub) {
 
-    var name = $('#userName').val();
+    var name = $('#userName').text();
 
     if (name.length > 0) {
         chatHub.server.connect(name);
@@ -27,11 +27,17 @@ function registerEvents(chatHub) {
 
         if (msg.length > 0) {
 
-            var userName = $('#userName').val();
+            var userName = $('#userName').text();
 
             var date = GetCurrentDateTime(new Date());
-
-            chatHub.server.sendMessageToAll(userName, msg, date);
+            if (userName == "admin") {
+                AddMessage(userName, msg, date, "/Images/dummy.jpg");
+                chatHub.server.sendPrivateMessage("dennis", msg, date);
+            }
+            else {
+                AddMessage(userName, msg, date, "/Images/dummy.jpg");
+                chatHub.server.sendPrivateMessage("admin", msg, date);
+            }
             $("#messageText").val('');
         }
     });
@@ -39,6 +45,7 @@ function registerEvents(chatHub) {
     // Send Message on Enter Button
     $("#messageText").keypress(function (e) {
         if (e.which == 13) {
+            e.preventDefault();
             $('#sendBtn').click();
         }
     });
@@ -50,7 +57,7 @@ function registerClientMethods(chatHub) {
     // Calls when user successfully logged in
     chatHub.client.onConnected = function (id, userName, allUsers, messages, times) {
 
-        $('#userName').val(userName);
+        $('#userName').text(userName);
 
         // Add All Users
         for (i = 0; i < allUsers.length; i++) {
@@ -94,50 +101,43 @@ function registerClientMethods(chatHub) {
     }
 
 
-    chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message, userimg, CurrentDateTime) {
+    //chatHub.client.sendPrivateMessage = function (windowId, fromUserName, message, userimg, CurrentDateTime) {
 
-        var ctrId = 'private_' + windowId;
-        if ($('#' + ctrId).length == 0) {
+    //    var CurrUser = $('#userName');
+    //    var Side = 'left';
+    //    var TimeSide = 'right';
 
-            OpenPrivateChatBox(chatHub, windowId, ctrId, fromUserName, userimg);
+    //    if (CurrUser == fromUserName) {
+    //        Side = 'right';
+    //        TimeSide = 'left';
 
-        }
+    //    }
+    //    else {
+    //        var Notification = 'New Message From ' + fromUserName;
+    //        IntervalVal = setInterval("ShowTitleAlert('SignalR Chat App', '" + Notification + "')", 800);
 
-        var CurrUser = $('#hdUserName').val();
-        var Side = 'right';
-        var TimeSide = 'left';
+    //        var msgcount = $('#' + ctrId).find('#MsgCountP').html();
+    //        msgcount++;
+    //        $('#' + ctrId).find('#MsgCountP').html(msgcount);
+    //        $('#' + ctrId).find('#MsgCountP').attr("title", msgcount + ' New Messages');
+    //    }
 
-        if (CurrUser == fromUserName) {
-            Side = 'left';
-            TimeSide = 'right';
+    //    var divChatP = '<div class="direct-chat-msg ' + Side + '">' +
+    //        '<div class="direct-chat-info clearfix">' +
+    //        '<span class="direct-chat-name pull-' + Side + '">' + fromUserName + '</span>' +
+    //        '<span class="direct-chat-timestamp pull-' + TimeSide + '"">' + CurrentDateTime + '</span>' +
+    //        '</div>' +
 
-        }
-        else {
-            var Notification = 'New Message From ' + fromUserName;
-            IntervalVal = setInterval("ShowTitleAlert('SignalR Chat App', '" + Notification + "')", 800);
+    //        ' <img class="direct-chat-img" src="' + userimg + '" alt="Message User Image">' +
+    //        ' <div class="direct-chat-text" >' + message + '</div> </div>';
 
-            var msgcount = $('#' + ctrId).find('#MsgCountP').html();
-            msgcount++;
-            $('#' + ctrId).find('#MsgCountP').html(msgcount);
-            $('#' + ctrId).find('#MsgCountP').attr("title", msgcount + ' New Messages');
-        }
+    //    $('#' + ctrId).find('#divMessage').append(divChatP);
 
-        var divChatP = '<div class="direct-chat-msg ' + Side + '">' +
-            '<div class="direct-chat-info clearfix">' +
-            '<span class="direct-chat-name pull-' + Side + '">' + fromUserName + '</span>' +
-            '<span class="direct-chat-timestamp pull-' + TimeSide + '"">' + CurrentDateTime + '</span>' +
-            '</div>' +
-
-            ' <img class="direct-chat-img" src="' + userimg + '" alt="Message User Image">' +
-            ' <div class="direct-chat-text" >' + message + '</div> </div>';
-
-        $('#' + ctrId).find('#divMessage').append(divChatP);
-
-        var htt = $('#' + ctrId).find('#divMessage')[0].scrollHeight;
-        $('#' + ctrId).find('#divMessage').slimScroll({
-            height: htt
-        });
-    }
+    //    var htt = $('#' + ctrId).find('#divMessage')[0].scrollHeight;
+    //    $('#' + ctrId).find('#divMessage').slimScroll({
+    //        height: htt
+    //    });
+    //}
 
 }
 
@@ -225,29 +225,29 @@ function AddUser(chatHub, id, name, UserImage, date) {
 
 function AddMessage(userName, message, time, userimg) {
 
-    var CurrUser = $('#userName').val();
-    var Side = 'right';
-    var TimeSide = 'left';
+    var CurrUser = $('#userName').text();
+    var Side = 'left';
+    var TimeSide = 'right';
 
     if (CurrUser == userName) {
-        Side = 'left';
-        TimeSide = 'right';
+        Side = 'right';
+        TimeSide = 'left';
 
     }
 
-    var divChat = '<div class="direct-chat-msg ' + Side + '">' +
-        '<div class="direct-chat-info clearfix">' +
-        '<span class="direct-chat-name pull-' + Side + '">' + userName + '</span>' +
-        '<span class="direct-chat-timestamp pull-' + TimeSide + '"">' + time + '</span>' +
+    var divChat = '<div class="chat-msg ' + Side + '">' +
+        '<div class="chat-info clearfix">' +
+        '<span class="chat-name pull-' + Side + '">' + userName + '</span>' +
+        '<span class="chat-timestamp pull-' + TimeSide + '"">' + time + '</span>' +
         '</div>' +
 
-        ' <img class="direct-chat-img" src="' + userimg + '" alt="Message User Image">' +
-        ' <div class="direct-chat-text" >' + message + '</div> </div>';
+        ' <img class="chat-img" src="' + userimg + '" alt="User Image">' +
+        ' <div class="chat-text" >' + message + '</div> </div>';
 
-    $('#messages').append(divChat);
+    $('.messages').append(divChat);
 
-    var height = $('#messages')[0].scrollHeight;
-    $('#messages').scrollTop(height);
+    var height = $('.messages')[0].scrollHeight;
+    $('.messages').scrollTop(height);
 
 }
 
