@@ -1,3 +1,4 @@
 
 *.dll
 App.config
+WCFService/App.config
