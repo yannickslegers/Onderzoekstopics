@@ -1,4 +1,5 @@
 ﻿var IntervalVal;
+var selectedUser;
 
 // Declare a proxy to reference the hub.
 
@@ -31,7 +32,7 @@ function registerEvents(chatHub) {
 
             var date = GetCurrentDateTime(new Date());
             if (userName == "admin") {
-                var toUser = $('.selectedUser').text();
+                var toUser = selectedUser;
                 AddMessage(userName, msg, date, "/Images/dummy.jpg");
                 chatHub.server.sendPrivateMessage(toUser, msg, date);
             }
@@ -134,11 +135,23 @@ function AddUser(chatHub, id, name, UserImage, date) {
         $(code).click(function () {
             var UserLink = $(this).find('.un').text();
             
-            $('.selecteduser').empty();
-            $('.selectedUser').text(UserLink);
+            selectedUser = UserLink;
             $('.selected').removeClass('selected');
             $('#'+UserLink).addClass('selected');
+
+            //Clear messages from screen
+            var msg = $('.messages').html();
+            if (msg.length > 0) {
+                $('.messages').html('');
+            }
+
+            //Load messages from selected user on screen
+            var messages = chatHub.server.getMessageCache(selectedUser);
             
+            for (i = 0; i < messages.length; i++) {
+                AddMessage(messages[i].UserName, messages[i].Text, messages[i].Time, messages[i].UserImage);
+
+            }
 
         });
     }

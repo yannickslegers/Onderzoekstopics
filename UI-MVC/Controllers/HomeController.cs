@@ -38,7 +38,7 @@ namespace SC.UI.Web.MVC.Controllers
 
         public ActionResult Login(LoginModel model)
         {
-            Session["UserName"] = model.UserName;
+            Session["UserName"] = model.UserName.ToLower();
             Session["LoggedIn"] = "true";
             return RedirectToAction("Index", "Home");
 

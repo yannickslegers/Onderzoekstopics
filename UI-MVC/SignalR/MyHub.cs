@@ -126,5 +126,11 @@ namespace SC.UI.Web.MVC
         {
             CurrentMessage.Clear();
         }
+
+        public List<Message> GetMessageCache(string userName)
+        {
+            CurrentMessage = MessageCache[userName];
+            return CurrentMessage;
+        }
     }
 }
