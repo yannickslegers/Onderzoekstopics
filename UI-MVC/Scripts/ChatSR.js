@@ -67,7 +67,7 @@ function registerClientMethods(chatHub) {
 
 
     // Calls when user successfully logged in
-    chatHub.client.onConnected = function (id, userName, allUsers, messages, times) {
+    chatHub.client.onConnected = function (id, userName, allUsers, messages) {
 
         $('#userName').text(userName);
 
@@ -108,6 +108,13 @@ function registerClientMethods(chatHub) {
         
     }
 
+    chatHub.client.reloadMessages = function (messages) {
+        for (i = 0; i < messages.length; i++) {
+            AddMessage(messages[i].UserName, messages[i].Text, messages[i].Time, messages[i].UserImage);
+
+        }
+    }
+
 }
 
 function GetCurrentDateTime(now) {
@@ -131,7 +138,7 @@ function AddUser(chatHub, id, name, UserImage, date) {
             '<p class="user-username">' + '<b id="' + id +'" class="un">' + name + '</b></p>' + '<p class="text-muted pull-right user-date"> Logged in: ' + date + '</p>  </div></div>');
 
 
-        //TODO: selected methode fixen zodat niet alles tegelijk geselecteerd wordt
+        
         $(code).click(function () {
             var UserLink = $(this).find('.un').text();
             
@@ -146,12 +153,8 @@ function AddUser(chatHub, id, name, UserImage, date) {
             }
 
             //Load messages from selected user on screen
-            var messages = chatHub.server.getMessageCache(selectedUser);
-            
-            for (i = 0; i < messages.length; i++) {
-                AddMessage(messages[i].UserName, messages[i].Text, messages[i].Time, messages[i].UserImage);
-
-            }
+            chatHub.server.getMessageCache(selectedUser);
+           
 
         });
     }
