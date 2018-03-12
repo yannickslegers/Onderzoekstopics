@@ -11,6 +11,7 @@ namespace SC.UI.Web.MVC
     {
         static List<User> ConnectedUsers = new List<User>();
         static List<Message> CurrentMessage = new List<Message>();
+        static Dictionary<string, List<Message>> MessageCache = new Dictionary<string, List<Message>>();
         ConnClass ConnC = new ConnClass();
 
         public void Connect(string userName)
@@ -20,15 +21,23 @@ namespace SC.UI.Web.MVC
             {
                 string userImg = GetUserImage(userName);
                 string loginTime = DateTime.Now.ToString();
-                ConnectedUsers.Add(new User
+
+                User user = new User
                 {
                     ConnectionId = id,
                     UserImage = userImg,
                     UserName = userName,
                     LoginTime = loginTime
-                });
+                };
+                ConnectedUsers.Add(user);
 
+                if (!MessageCache.Keys.Contains(userName))
+                {
+                    MessageCache.Add(userName, new List<Message>());
+                }
+                
                 // send to caller
+                CurrentMessage = MessageCache[userName];
                 Clients.Caller.onConnected(id, userName, ConnectedUsers, CurrentMessage);
 
                 // send to all except caller client
@@ -56,13 +65,13 @@ namespace SC.UI.Web.MVC
             return base.OnDisconnected(stopCalled);
         }
 
-        public void SendMessageToAll(string userName, string message, string time)
-        {
-            string userImg = GetUserImage(userName);
-            AddMessageinCache(userName, message, time, userImg);
-            //Broadcast message
-            Clients.All.messageReceived(userName, message, time, userImg);
-        }
+        //public void SendMessageToAll(string userName, string message, string time)
+        //{
+        //    string userImg = GetUserImage(userName);
+        //    AddMessageinCache(userName, message, time, userImg);
+        //    //Broadcast message
+        //    Clients.All.messageReceived(userName, message, time, userImg);
+        //}
 
         public void SendPrivateMessage(string toUserName, string message, string time)
         {
@@ -75,7 +84,7 @@ namespace SC.UI.Web.MVC
             if (toUser != null && fromUser != null)
             {
                 string userImg = GetUserImage(fromUser.UserName);
-                AddMessageinCache(userName, message, time, userImg);
+                AddMessageinCache(toUserName,userName, message, time, userImg);
                 // send to 
                 //Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.UserName, message, userImg, CurrentDateTime);
                 Clients.Client(toUserId).messageReceived(fromUser.UserName, message, time, userImg);
@@ -102,9 +111,11 @@ namespace SC.UI.Web.MVC
             return imgName;
         }
 
-        private void AddMessageinCache(string userName, string message, string time, string UserImg)
+        private void AddMessageinCache(string toUserName, string fromUserName, string message, string time, string UserImg)
         {
-            CurrentMessage.Add(new Message { UserName = userName, Text = message, Time = time, UserImage = UserImg });
+            var user = Context.User.Identity.Name;
+            MessageCache[toUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
+            MessageCache[fromUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
 
             if (CurrentMessage.Count > 100)
                 CurrentMessage.RemoveAt(0);

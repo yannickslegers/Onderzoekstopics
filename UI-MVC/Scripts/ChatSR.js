@@ -124,21 +124,21 @@ function AddUser(chatHub, id, name, UserImage, date) {
     
     if(userName != name) {
 
-        code = $('<div class="box-user '+id+'">' +
+        code = $('<div class="box-user '+id+'" id="'+name+'">' +
             '<img class="img-circle img-user" src="' + UserImage + '" alt="User Image" />' +
             ' <div class="user-text">' +
             '<p class="user-username">' + '<b id="' + id +'" class="un">' + name + '</b></p>' + '<p class="text-muted pull-right user-date"> Logged in: ' + date + '</p>  </div></div>');
 
 
-        
+        //TODO: selected methode fixen zodat niet alles tegelijk geselecteerd wordt
         $(code).click(function () {
-            var UserLink = $('.un').text();
-            if (userName != UserLink) {
-                $('.selecteduser').empty();
-                $('.selectedUser').text(UserLink);
-                $('.selected').removeClass('selected');
-                $('.box-user').addClass('selected');
-            }
+            var UserLink = $(this).find('.un').text();
+            
+            $('.selecteduser').empty();
+            $('.selectedUser').text(UserLink);
+            $('.selected').removeClass('selected');
+            $('#'+UserLink).addClass('selected');
+            
 
         });
     }
