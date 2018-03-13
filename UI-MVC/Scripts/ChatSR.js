@@ -1,5 +1,5 @@
 ﻿var IntervalVal;
-var selectedUser;
+var selectedUser = "broadcast";
 
 // Declare a proxy to reference the hub.
 
@@ -33,8 +33,13 @@ function registerEvents(chatHub) {
             var date = GetCurrentDateTime(new Date());
             if (userName == "admin") {
                 var toUser = selectedUser;
-                AddMessage(userName, msg, date, "/Images/dummy.jpg");
-                chatHub.server.sendPrivateMessage(toUser, msg, date);
+                if (toUser == "broadcast") {
+                    chatHub.server.sendMessageToAll("UPDATE: "+ msg, date);
+                }
+                else {
+                    AddMessage(userName, msg, date, "/Images/dummy.jpg");
+                    chatHub.server.sendPrivateMessage(toUser, msg, date);
+                }
             }
             else {
                 AddMessage(userName, msg, date, "/Images/dummy.jpg");
@@ -52,14 +57,20 @@ function registerEvents(chatHub) {
         }
     });
 
-    //Clear Cache Button Click Event
-    $('#clearBtn').click(function () {
+    // Broadcast Button click event
+    $('#broadcast').click(function () {
+        $('.selected').removeClass('selected');
+        selectedUser = "broadcast";
+
+        //Clear messages from screen
         var msg = $('.messages').html();
         if (msg.length > 0) {
-            chatHub.server.clearMessageCache();
             $('.messages').html('');
         }
-        
+
+        //Load messages from admin cache (broadcasts)
+        chatHub.server.getMessageCache("admin");
+
     })
 }
 

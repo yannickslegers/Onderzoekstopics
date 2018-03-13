@@ -69,10 +69,6 @@ textarea {
     float: right;
 }
 
-#clearBtn{
-    float:right;
-}
-
 /*Html inserted by javascript*/
 /*#region Messages*/
 
@@ -193,12 +189,19 @@ textarea {
     background-color: dodgerblue;
     color: white;
     text-align: center;
+    display: flex;
+    justify-content: space-around;
 }
 
     .usersHeader p {
         line-height: 41px;
         font-size: 20px;
     }
+#broadcast{
+    margin-top: 5px;  
+    margin-right: -80px;
+    height: 75%;
+}
 .onlineUsers {
     padding: 10px;
     height: 100%;
@@ -212,9 +215,9 @@ textarea {
     display: flex;
     flex-direction: row;
 }
-.box-user:hover{
-    background-color: #efeded;
-}
+    .box-user:hover {
+        background-color: #b4b4b4;
+    }
 
 .img-user{
     width: 75px;
@@ -237,8 +240,8 @@ textarea {
     margin-top:-15px;
 }
 
-.selected{
-    background-color: #b4b4b4
+.selected {
+  background-color: #efeded;
 }
 /*#endregion Users*/
 

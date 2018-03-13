@@ -65,13 +65,17 @@ namespace SC.UI.Web.MVC
             return base.OnDisconnected(stopCalled);
         }
 
-        //public void SendMessageToAll(string userName, string message, string time)
-        //{
-        //    string userImg = GetUserImage(userName);
-        //    AddMessageinCache(userName, message, time, userImg);
-        //    //Broadcast message
-        //    Clients.All.messageReceived(userName, message, time, userImg);
-        //}
+        //Message broadcasting
+        public void SendMessageToAll(string message, string time)
+        {
+            string userImg = GetUserImage("admin");
+            //saving message in cache of all connected users
+            foreach (var user in ConnectedUsers){
+                AddMessageinCache(user.UserName,"admin", message, time, userImg);
+            }
+            //Broadcast message
+            Clients.All.messageReceived("admin", message, time, userImg);
+        }
 
         public void SendPrivateMessage(string toUserName, string message, string time)
         {
@@ -86,12 +90,7 @@ namespace SC.UI.Web.MVC
                 string userImg = GetUserImage(fromUser.UserName);
                 AddMessageinCache(toUserName,userName, message, time, userImg);
                 // send to 
-                //Clients.Client(toUserId).sendPrivateMessage(fromUserId, fromUser.UserName, message, userImg, CurrentDateTime);
                 Clients.Client(toUserId).messageReceived(fromUser.UserName, message, time, userImg);
-
-                // send to caller user
-                //Clients.Caller.sendPrivateMessage(toUserId, fromUser.UserName, message, userImg, CurrentDateTime);
-                //Clients.Caller.messageReceived(fromUser.UserName, message, CurrentDateTime, userImg);
             }
         }
 
@@ -114,17 +113,19 @@ namespace SC.UI.Web.MVC
         private void AddMessageinCache(string toUserName, string fromUserName, string message, string time, string UserImg)
         {
             var user = Context.User.Identity.Name;
-            MessageCache[toUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
-            MessageCache[fromUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
+            if (fromUserName.Equals("admin"))
+            {
+                MessageCache[toUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
+            }
+            else
+            {
+                MessageCache[fromUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
 
-            if (CurrentMessage.Count > 100)
-                CurrentMessage.RemoveAt(0);
+            }
 
-        }
+            if (MessageCache[toUserName].Count > 100)
+                MessageCache[toUserName].RemoveAt(0);
 
-        public void ClearMessageCache()
-        {
-            CurrentMessage.Clear();
         }
 
         public void GetMessageCache(string userName)
