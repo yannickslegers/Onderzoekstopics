@@ -172,8 +172,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Models\SignalR\ConnClass.cs" />
-    <Compile Include="Models\SignalR\LoggedIn.cs" />
     <Compile Include="Models\SignalR\LoginModel.cs" />
     <Compile Include="Models\SignalR\Message.cs" />
     <Compile Include="Models\SignalR\User.cs" />
@@ -190,7 +188,7 @@
     <Compile Include="Controllers\Api\TicketResponseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ChatController.cs" />
-    <Compile Include="SignalR\MyHub.cs" />
+    <Compile Include="SignalR\ChatHub.cs" />
     <Compile Include="SignalR\Startup.cs" />
     <Compile Include="Controllers\TicketController.cs" />
     <Compile Include="Global.asax.cs">

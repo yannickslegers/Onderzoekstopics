@@ -13,8 +13,9 @@ namespace SC.UI.Web.MVC.SignalR
     {
         static List<User> ConnectedUsers = new List<User>();
         static List<Message> CurrentMessage = new List<Message>();
+
         static Dictionary<string, List<Message>> MessageCache = new Dictionary<string, List<Message>>();
-        private readonly ConnClass _connC = new ConnClass();
+        
 
         public void Connect(string userName)
         {
@@ -91,36 +92,20 @@ namespace SC.UI.Web.MVC.SignalR
 
         public string GetUserImage(string userName)
         {
-            string imgName = "/Images/dummy.jpg";
-
-            try
-            {
-                string query = "select Image from tb_Users where UserName:'" + userName + "'";
-                imgName = _connC.GetColumnVal(query, "Image");
-            }
-            catch(Exception e)
-            {
-                Console.WriteLine(e.Message);
-            }
-            return imgName;
+            return "/Images/dummy.jpg";
         }
 
         private void AddMessageInCache(string toUserName, string fromUserName, string message, string time, string userImg)
         {
-            //var user = Context.User.Identity.Name;
-            if (fromUserName.Equals("admin"))
-            {
+            if (fromUserName.Equals("admin")){
                 MessageCache[toUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = userImg });
             }
-            else
-            {
+            else{
                 MessageCache[fromUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = userImg });
-
             }
 
             if (MessageCache[toUserName].Count > 100)
                 MessageCache[toUserName].RemoveAt(0);
-
         }
 
         public void GetMessageCache(string userName)

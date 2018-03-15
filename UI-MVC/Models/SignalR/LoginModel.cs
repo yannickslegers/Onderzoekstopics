@@ -8,6 +8,6 @@ namespace SC.UI.Web.MVC.Models.SignalR
     public class LoginModel
     {
         public String UserName { get; set; }
-        public String Password { get; set; }
+       
     }
 }

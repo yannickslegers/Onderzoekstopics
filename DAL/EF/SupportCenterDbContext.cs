@@ -24,7 +24,7 @@ namespace SC.DAL.EF
         public DbSet<Ticket> Tickets { get; set; }
         public DbSet<HardwareTicket> HardwareTickets { get; set; }
         public DbSet<TicketResponse> TicketResponses { get; set; }
-        public DbSet<User> Users { get; set; }
+        
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -44,8 +44,8 @@ namespace SC.DAL.EF
             modelBuilder.Entity<Ticket>().Property(t => t.State)
                                          .HasColumnAnnotation("Index", new IndexAnnotation(new IndexAttribute()));
 
-            // 'User.ConnectionId' as unique identifier
-            modelBuilder.Entity<User>().HasKey(u => u.Id);
+            
+            
         }
     }
 }

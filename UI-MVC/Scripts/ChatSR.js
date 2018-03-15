@@ -1,10 +1,11 @@
 ﻿var IntervalVal;
 var selectedUser = "broadcast";
 
-// Declare a proxy to reference the hub.
-
+// Proxy referentie naar hub declareren.
 var chatHub = $.connection.chatHub;
+
 registerClientMethods(chatHub);
+
 // Start Hub
 $.connection.hub.start().done(function () {
 
@@ -18,7 +19,6 @@ function registerEvents(chatHub) {
 
     if (name.length > 0) {
         chatHub.server.connect(name);
-
     }
 
     // Send Button Click Event
@@ -117,7 +117,7 @@ function registerClientMethods(chatHub) {
     chatHub.client.messageReceived = function (userName, message, time, userimg) {
 
         AddMessage(userName, message, time, userimg);
-        
+            
     }
     // load user specific message cache
     chatHub.client.reloadMessages = function (messages) {
@@ -138,9 +138,7 @@ function GetCurrentDateTime(now) {
 
 // Adds online user to current online users table
 function AddUser(chatHub, id, name, userImage, date) {
-
     var userName = $("#userName").text();
-
     var code;
     
     if(userName !== name) {
@@ -149,8 +147,6 @@ function AddUser(chatHub, id, name, userImage, date) {
             }" alt="User Image" /> <div class="user-text"><p class="user-username"><b id="${id}" class="un">${name
             }</b></p><p class="text-muted pull-right user-date"> Logged in: ${date}</p>  </div></div>`);
 
-
-        
         $(code).click(function () {
             var userLink = $(this).find(".un").text();
             
@@ -163,17 +159,11 @@ function AddUser(chatHub, id, name, userImage, date) {
             if (msg.length > 0) {
                 $(".messages").html("");
             }
-
             //Load messages from selected user on screen
             chatHub.server.getMessageCache(selectedUser);
-           
-
         });
     }
-
     $(".users").append(code);
-    
-
 }
 
 // Adds message to message partial view
@@ -186,17 +176,12 @@ function AddMessage(userName, message, time, userimg) {
     if (currUser === userName) {
         side = "right";
         timeSide = "left";
-
     }
-
     var divChat = `<div class="chat-msg ${side}"><div class="chat-info clearfix"><span class="chat-name pull-${side}">${userName
         }</span><span class="chat-timestamp pull-${timeSide}"">${time}</span></div> <img class="chat-img" src="${userimg
         }" alt="User Image"> <div class="chat-text" >${message}</div> </div>`;
-
     $(".messages").append(divChat);
-
     var height = $(".messages")[0].scrollHeight;
     $(".messages").scrollTop(height);
-
 }
 

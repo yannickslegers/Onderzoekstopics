@@ -84,16 +84,6 @@ namespace SC.DAL.EF
             };
             context.Tickets.Add(ht1);
 
-            //Creating Admin
-            User admin = new User()
-            {
-                UserName = "admin",
-                Password = "admin",
-                Email = "admin@admin.com",
-                Image = "/Images/dummy.jpg"
-            };
-            context.Users.Add(admin);
-
             // Save the changes in the context (all added entities) to the database
             context.SaveChanges();
         }
