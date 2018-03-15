@@ -1,21 +1,3 @@
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\WCFService.dll.config
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\WCFService.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\WCFService.pdb
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.Domain.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.DAL.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.pdb
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.Domain.pdb
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.DAL.pdb
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.DAL.dll.config
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.xml
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.csprojResolveAssemblyReference.cache
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.csproj.CoreCompileInputs.cache
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.dll
-C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.pdb
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\bin\Debug\WCFService.dll.config
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\bin\Debug\WCFService.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\bin\Debug\WCFService.pdb
@@ -35,3 +17,23 @@ C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFS
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\obj\Debug\WCFService.csprojResolveAssemblyReference.cache
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\obj\Debug\WCFService.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\WCFService\obj\Debug\WCFService.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\WCFService.dll.config
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\WCFService.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\WCFService.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\DTO.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.Domain.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.DAL.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.BL.Domain.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\DTO.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.DAL.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\SC.DAL.dll.config
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.xml
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.csprojResolveAssemblyReference.cache
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.csproj.CoreCompileInputs.cache
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\WCFService\obj\Debug\WCFService.pdb

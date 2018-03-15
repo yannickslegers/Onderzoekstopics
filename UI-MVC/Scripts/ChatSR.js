@@ -8,13 +8,13 @@ registerClientMethods(chatHub);
 // Start Hub
 $.connection.hub.start().done(function () {
 
-    registerEvents(chatHub)
+    registerEvents(chatHub);
 
 });
 
 function registerEvents(chatHub) {
 
-    var name = $('#userName').text();
+    var name = $("#userName").text();
 
     if (name.length > 0) {
         chatHub.server.connect(name);
@@ -22,18 +22,18 @@ function registerEvents(chatHub) {
     }
 
     // Send Button Click Event
-    $('#sendBtn').click(function () {
+    $("#sendBtn").click(function () {
 
         var msg = $("#messageText").val();
 
         if (msg.length > 0) {
 
-            var userName = $('#userName').text();
+            var userName = $("#userName").text();
 
             var date = GetCurrentDateTime(new Date());
-            if (userName == "admin") {
+            if (userName === "admin") {
                 var toUser = selectedUser;
-                if (toUser == "broadcast") {
+                if (toUser === "broadcast") {
                     chatHub.server.sendMessageToAll("UPDATE: "+ msg, date);
                 }
                 else {
@@ -45,33 +45,33 @@ function registerEvents(chatHub) {
                 AddMessage(userName, msg, date, "/Images/dummy.jpg");
                 chatHub.server.sendPrivateMessage("admin", msg, date);
             }
-            $("#messageText").val('');
+            $("#messageText").val("");
         }
     });
 
     // Send Message on Enter Button
     $("#messageText").keypress(function (e) {
-        if (e.which == 13) {
+        if (e.which === 13) {
             e.preventDefault();
-            $('#sendBtn').click();
+            $("#sendBtn").click();
         }
     });
 
     // Broadcast Button click event
-    $('#broadcast').click(function () {
-        $('.selected').removeClass('selected');
+    $('#broadcast').click(function() {
+        $('.selected').removeClass("selected");
         selectedUser = "broadcast";
 
         //Clear messages from screen
-        var msg = $('.messages').html();
+        var msg = $(".messages").html();
         if (msg.length > 0) {
-            $('.messages').html('');
+            $(".messages").html("");
         }
 
         //Load messages from admin cache (broadcasts)
         chatHub.server.getMessageCache("admin");
 
-    })
+    });
 }
 
 function registerClientMethods(chatHub) {
@@ -80,10 +80,10 @@ function registerClientMethods(chatHub) {
     // Calls when user successfully logged in
     chatHub.client.onConnected = function (id, userName, allUsers, messages) {
 
-        $('#userName').text(userName);
+        $("#userName").text(userName);
 
         // Add All Users
-        for (i = 0; i < allUsers.length; i++) {
+        for (var i = 0; i < allUsers.length; i++) {
 
             AddUser(chatHub, allUsers[i].ConnectionId, allUsers[i].UserName, allUsers[i].UserImage, allUsers[i].LoginTime);
         }
@@ -96,31 +96,32 @@ function registerClientMethods(chatHub) {
     }
 
     // On New User Connected
-    chatHub.client.onNewUserConnected = function (id, name, UserImage, loginDate) {
-        AddUser(chatHub, id, name, UserImage, loginDate);
+    chatHub.client.onNewUserConnected = function (id, name, userImage, loginDate) {
+        AddUser(chatHub, id, name, userImage, loginDate);
     }
 
     // On User Disconnected
     chatHub.client.onUserDisconnected = function (id, userName) {
 
-        $('.' + id).remove();
+        
+        $(`.${id}`).remove();
 
-        var disc = $('<div class="disconnect">"' + userName + '" logged off.</div>');
+        var disc = $(`<div class="disconnect">"${userName}" logged off.</div>`);
 
         $(disc).hide();
-        $('.users').prepend(disc);
+        $(".users").prepend(disc);
         $(disc).fadeIn(200).delay(2000).fadeOut(200);
 
     }
-
+    // On message recieved
     chatHub.client.messageReceived = function (userName, message, time, userimg) {
 
         AddMessage(userName, message, time, userimg);
         
     }
-
+    // load user specific message cache
     chatHub.client.reloadMessages = function (messages) {
-        for (i = 0; i < messages.length; i++) {
+        for (var i = 0; i < messages.length; i++) {
             AddMessage(messages[i].UserName, messages[i].Text, messages[i].Time, messages[i].UserImage);
 
         }
@@ -135,32 +136,32 @@ function GetCurrentDateTime(now) {
     return localdate;
 }
 
-function AddUser(chatHub, id, name, UserImage, date) {
+// Adds online user to current online users table
+function AddUser(chatHub, id, name, userImage, date) {
 
-    var userName = $('#userName').text();
+    var userName = $("#userName").text();
 
     var code;
     
-    if(userName != name) {
+    if(userName !== name) {
 
-        code = $('<div class="box-user '+id+'" id="'+name+'">' +
-            '<img class="img-circle img-user" src="' + UserImage + '" alt="User Image" />' +
-            ' <div class="user-text">' +
-            '<p class="user-username">' + '<b id="' + id +'" class="un">' + name + '</b></p>' + '<p class="text-muted pull-right user-date"> Logged in: ' + date + '</p>  </div></div>');
+        code = $(`<div class="box-user ${id}" id="${name}"><img class="img-circle img-user" src="${userImage
+            }" alt="User Image" /> <div class="user-text"><p class="user-username"><b id="${id}" class="un">${name
+            }</b></p><p class="text-muted pull-right user-date"> Logged in: ${date}</p>  </div></div>`);
 
 
         
         $(code).click(function () {
-            var UserLink = $(this).find('.un').text();
+            var userLink = $(this).find(".un").text();
             
-            selectedUser = UserLink;
-            $('.selected').removeClass('selected');
-            $('#'+UserLink).addClass('selected');
+            selectedUser = userLink;
+            $(".selected").removeClass("selected");
+            $(`#${userLink}`).addClass("selected");
 
             //Clear messages from screen
-            var msg = $('.messages').html();
+            const msg = $('.messages').html();
             if (msg.length > 0) {
-                $('.messages').html('');
+                $(".messages").html("");
             }
 
             //Load messages from selected user on screen
@@ -170,36 +171,32 @@ function AddUser(chatHub, id, name, UserImage, date) {
         });
     }
 
-    $('.users').append(code);
+    $(".users").append(code);
     
 
 }
 
+// Adds message to message partial view
 function AddMessage(userName, message, time, userimg) {
 
-    var CurrUser = $('#userName').text();
-    var Side = 'left';
-    var TimeSide = 'right';
+    var currUser = $("#userName").text();
+    var side = "left";
+    var timeSide = "right";
 
-    if (CurrUser == userName) {
-        Side = 'right';
-        TimeSide = 'left';
+    if (currUser === userName) {
+        side = "right";
+        timeSide = "left";
 
     }
 
-    var divChat = '<div class="chat-msg ' + Side + '">' +
-        '<div class="chat-info clearfix">' +
-        '<span class="chat-name pull-' + Side + '">' + userName + '</span>' +
-        '<span class="chat-timestamp pull-' + TimeSide + '"">' + time + '</span>' +
-        '</div>' +
+    var divChat = `<div class="chat-msg ${side}"><div class="chat-info clearfix"><span class="chat-name pull-${side}">${userName
+        }</span><span class="chat-timestamp pull-${timeSide}"">${time}</span></div> <img class="chat-img" src="${userimg
+        }" alt="User Image"> <div class="chat-text" >${message}</div> </div>`;
 
-        ' <img class="chat-img" src="' + userimg + '" alt="User Image">' +
-        ' <div class="chat-text" >' + message + '</div> </div>';
+    $(".messages").append(divChat);
 
-    $('.messages').append(divChat);
-
-    var height = $('.messages')[0].scrollHeight;
-    $('.messages').scrollTop(height);
+    var height = $(".messages")[0].scrollHeight;
+    $(".messages").scrollTop(height);
 
 }
 

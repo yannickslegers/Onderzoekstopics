@@ -87,26 +87,25 @@ namespace SC.UI.CA
             Console.Write("Ticketnummer: ");
             int input = Int32.Parse(Console.ReadLine());
 
-            //mgr.ChangeTicketStateToClosed(input);
-            // via WebAPI-service
+
             _client.ChangeTicketStateToClosed(input);
         }
 
         private static void PrintAllTickets()
         {
-            
+
             foreach (var t in _client.GetTickets())
                 Console.WriteLine(t.GetInfo());
-            
+
         }
 
         private static void ActionShowTicketDetails()
         {
             Console.Write("Ticketnummer: ");
             int input = Int32.Parse(Console.ReadLine());
-            
+
             TicketDTO t = _client.GetTicket(input);
-            
+
             PrintTicketDetails(t);
 
         }
@@ -129,11 +128,10 @@ namespace SC.UI.CA
             Console.Write("Ticketnummer: ");
             int input = Int32.Parse(Console.ReadLine());
 
-            //IEnumerable<TicketResponse> responses = mgr.GetTicketResponses(input);
-            // via Web API-service
-           
+
+
             IEnumerable<TicketResponseDTO> responses = _client.GetTicketResponses(input);
-            
+
             if (responses != null) PrintTicketResponses(responses);
         }
 
@@ -161,12 +159,12 @@ namespace SC.UI.CA
             accountNumber = Int32.Parse(Console.ReadLine());
             Console.Write("Probleem: ");
             problem = Console.ReadLine();
-            
+
             if (!isHardwareProblem)
                 _client.AddTicket(accountNumber, problem);
             else
                 _client.AddHardwareTicket(accountNumber, device, problem);
-            
+
         }
 
         private static void ActionAddResponseToTicket()
@@ -176,11 +174,10 @@ namespace SC.UI.CA
             Console.Write("Antwoord: ");
             string response = Console.ReadLine();
 
-            //mgr.AddTicketResponse(ticketNumber, response, false);
-            // via WebAPI-service
-            
+
+
             _client.AddResponse(ticketNumber, response, false);
-           
+
         }
     }
 }

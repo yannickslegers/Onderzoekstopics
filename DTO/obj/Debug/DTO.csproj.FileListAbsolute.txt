@@ -5,3 +5,11 @@ C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.dll
 C:\Users\yanni\Documents\KdG TI\jaar 2\programmeren 2 .net\Onderzoekstopics\DTO\obj\Debug\DTO.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\bin\Debug\DTO.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\bin\Debug\DTO.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\bin\Debug\SC.BL.Domain.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\bin\Debug\SC.BL.Domain.pdb
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\obj\Debug\DTO.csproj.CoreCompileInputs.cache
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\obj\Debug\DTO.dll
+C:\Users\Shawn\Documents\KDG\dotNet\Onderzoekstopic\Onderzoekstopics\DTO\obj\Debug\DTO.pdb

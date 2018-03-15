@@ -1,18 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNet.SignalR;
 using SC.UI.Web.MVC.Models.SignalR;
-using System.Threading.Tasks;
 
-namespace SC.UI.Web.MVC
+namespace SC.UI.Web.MVC.SignalR
 {
     public class ChatHub : Hub
     {
         static List<User> ConnectedUsers = new List<User>();
         static List<Message> CurrentMessage = new List<Message>();
         static Dictionary<string, List<Message>> MessageCache = new Dictionary<string, List<Message>>();
-        ConnClass ConnC = new ConnClass();
+        private readonly ConnClass _connC = new ConnClass();
 
         public void Connect(string userName)
         {
@@ -20,7 +22,7 @@ namespace SC.UI.Web.MVC
             if(ConnectedUsers.Count(x => x.ConnectionId == id) == 0)
             {
                 string userImg = GetUserImage(userName);
-                string loginTime = DateTime.Now.ToString();
+                string loginTime = DateTime.Now.ToString(CultureInfo.CurrentCulture);
 
                 User user = new User
                 {
@@ -45,22 +47,15 @@ namespace SC.UI.Web.MVC
             }
         }
 
-        public override Task OnConnected()
-        {
-            return base.OnConnected();
-        }
-
         public override Task OnDisconnected(bool stopCalled)
         {
+
             var item = ConnectedUsers.FirstOrDefault(x => x.ConnectionId == Context.ConnectionId);
-            if (item != null)
-            {
-                ConnectedUsers.Remove(item);
+            if (item == null) return base.OnDisconnected(stopCalled);
+            ConnectedUsers.Remove(item);
 
-                var id = Context.ConnectionId;
-                Clients.All.onUserDisconnected(id, item.UserName);
-
-            }
+            var id = Context.ConnectionId;
+            Clients.All.onUserDisconnected(id, item.UserName);
 
             return base.OnDisconnected(stopCalled);
         }
@@ -71,7 +66,7 @@ namespace SC.UI.Web.MVC
             string userImg = GetUserImage("admin");
             //saving message in cache of all connected users
             foreach (var user in ConnectedUsers){
-                AddMessageinCache(user.UserName,"admin", message, time, userImg);
+                AddMessageInCache(user.UserName,"admin", message, time, userImg);
             }
             //Broadcast message
             Clients.All.messageReceived("admin", message, time, userImg);
@@ -88,7 +83,7 @@ namespace SC.UI.Web.MVC
             if (toUser != null && fromUser != null)
             {
                 string userImg = GetUserImage(fromUser.UserName);
-                AddMessageinCache(toUserName,userName, message, time, userImg);
+                AddMessageInCache(toUserName,userName, message, time, userImg);
                 // send to 
                 Clients.Client(toUserId).messageReceived(fromUser.UserName, message, time, userImg);
             }
@@ -101,25 +96,25 @@ namespace SC.UI.Web.MVC
             try
             {
                 string query = "select Image from tb_Users where UserName:'" + userName + "'";
-                imgName = ConnC.GetColumnVal(query, "Image");
+                imgName = _connC.GetColumnVal(query, "Image");
             }
             catch(Exception e)
             {
-                //Exception handling
+                Console.WriteLine(e.Message);
             }
             return imgName;
         }
 
-        private void AddMessageinCache(string toUserName, string fromUserName, string message, string time, string UserImg)
+        private void AddMessageInCache(string toUserName, string fromUserName, string message, string time, string userImg)
         {
-            var user = Context.User.Identity.Name;
+            //var user = Context.User.Identity.Name;
             if (fromUserName.Equals("admin"))
             {
-                MessageCache[toUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
+                MessageCache[toUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = userImg });
             }
             else
             {
-                MessageCache[fromUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = UserImg });
+                MessageCache[fromUserName].Add(new Message { UserName = fromUserName, Text = message, Time = time, UserImage = userImg });
 
             }
 

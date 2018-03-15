@@ -8,18 +8,14 @@ using System.Runtime.Serialization;
 
 namespace SC.BL.Domain
 {
-    [DataContract]
+   
     public class TicketResponse : IValidatableObject
     {
         public int Id { get; set; }
-
         [Required]
         public string Text { get; set; }
-
         public DateTime Date { get; set; }
-
         public bool IsClientResponse { get; set; }
-
         [Required]
         public Ticket Ticket { get; set; }
 

@@ -14,30 +14,22 @@ namespace SC.UI.Web.MVC.Controllers
 {
     public class TicketController : Controller
     {
-       // private ITicketManager mgr = new TicketManager();
+
         private static readonly ServiceReference1.ServiceClient _client = new ServiceClient();
         // GET: Ticket
         public ActionResult Index()
         {
-
-
             IEnumerable<TicketDTO> tickets = _client.GetTickets();
-            
-            
             return View(tickets);
-
         }
 
         // GET: Ticket/Details/5
         public ActionResult Details(int id)
         {
             TicketDTO ticket = _client.GetTicket(id);
-
             var responses = _client.GetTicketResponses(id);
-
             ticket.Responses = responses;
-            // OF: via ViewBag
-            //ViewBag.Responses = responses;
+
 
             return View(ticket);
         }
@@ -50,11 +42,11 @@ namespace SC.UI.Web.MVC.Controllers
 
         // POST: Ticket/Create
         [HttpPost]
-        /* public ActionResult Create(Ticket ticket)
+        /* public ActionResult Create(TicketDTO ticket)
         {
           if (ModelState.IsValid)
           {
-            ticket = mgr.AddTicket(ticket.AccountId, ticket.Text);
+            ticket = _client.AddTicket(ticket.AccountId, ticket.Text);
 
             return RedirectToAction("Details", new { id = ticket.TicketNumber });
           }
@@ -67,7 +59,6 @@ namespace SC.UI.Web.MVC.Controllers
             if (ModelState.IsValid)
             {
                 TicketDTO ticket = _client.AddTicket(newTicket.AccId, newTicket.Problem);
-
                 return RedirectToAction("Details", new { id = ticket.TicketNumber });
             }
 
@@ -88,7 +79,6 @@ namespace SC.UI.Web.MVC.Controllers
             if (ModelState.IsValid)
             {
                 _client.ChangeTicket(ticket);
-
                 return RedirectToAction("Index");
             }
 
@@ -109,7 +99,6 @@ namespace SC.UI.Web.MVC.Controllers
             try
             {
                 _client.RemoveTicket(id);
-
                 return RedirectToAction("Index");
             }
             catch

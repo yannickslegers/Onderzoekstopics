@@ -28,6 +28,16 @@ namespace WCFService
             return new TicketDTO(mgr.GetTicket(ticketNumber));
         }
 
+        public IEnumerable<TicketResponseDTO> GetTicketResponses(int ticketNumber)
+        {
+            var responses = new List<TicketResponseDTO>();
+            foreach (var response in mgr.GetTicketResponses(ticketNumber))
+            {
+                responses.Add(new TicketResponseDTO(response));
+            }
+            return responses.AsEnumerable();
+        }
+
         public TicketDTO AddTicket(int accountId, string question)
         {
             return new TicketDTO(mgr.AddTicket(accountId, question));
@@ -35,8 +45,12 @@ namespace WCFService
 
         public TicketDTO AddHardwareTicket(int accountId, string device, string problem)
         {
-            //TODO: hardwareticket dto maken
             return new TicketDTO(mgr.AddTicket(accountId, device, problem));
+        }
+
+        public TicketResponseDTO AddResponse(int ticketNumber, string response, bool isClientResponse)
+        {
+            return new TicketResponseDTO(mgr.AddTicketResponse(ticketNumber, response, isClientResponse));
         }
 
         public void ChangeTicket(TicketDTO ticket)
@@ -75,21 +89,9 @@ namespace WCFService
         {
             mgr.RemoveTicket(ticketNumber);
         }
+        
 
-        public IEnumerable<TicketResponseDTO> GetTicketResponses(int ticketNumber)
-        {
-            var responses = new List<TicketResponseDTO>();
-            foreach(var response in mgr.GetTicketResponses(ticketNumber))
-            {
-                responses.Add(new TicketResponseDTO(response));
-            }
-            return responses.AsEnumerable();
-        }
-
-        public TicketResponseDTO AddResponse(int ticketNumber, string response, bool isClientResponse)
-        {
-            return new TicketResponseDTO(mgr.AddTicketResponse(ticketNumber, response, isClientResponse));
-        }
+        
 
         
     }
